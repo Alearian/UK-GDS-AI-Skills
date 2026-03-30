@@ -1,0 +1,23 @@
+#  Get started 
+The examples in the GOV.UK Design System come with code to make it easy for you to use them in your project.
+There are guides to getting started:
+  * [with prototyping](./get-started/prototyping.md)
+  * [working in production](./get-started/production.md)
+
+## Using styles, components and patterns
+When we publish new [styles](./styles.md), [components](./components.md) or [patterns](./patterns.md) we include details of how and when it’s been tested in user research. This should help you decide whether it’s something you can use or adapt for your service.
+You can ask questions or share your research by joining the discussion on GitHub. There are links at the end of each style, component and pattern page - under the ‘Help improve this page’ heading.
+## GitHub discussions about styles, components and patterns
+Bear in mind that ideas discussed on GitHub may not have been tested. You can use them as a starting point, but it’s important to carry out user research to check that they work for your service. Then when you’ve carried out your user research, add your findings to the relevant discussion.
+GitHub discussions are open to everyone, including members of the public. The views expressed there are the views of individuals and not the views of the [GOV.UK Design System team](./design-system-team.md).
+## Setup guides
+  * [Prototyping](./get-started/prototyping.md)
+  * [Production](./get-started/production.md)
+
+## How to guides
+  * [Making labels and legends headings](./get-started/labels-legends-headings.md)
+  * [Extending and modifying components in production](./get-started/extending-and-modifying-components.md)
+  * [Understanding focus state styles](./get-started/focus-states.md)
+  * [Using the updated type scale](./get-started/new-type-scale.md)
+
+[ ](./get-started/#top.md)

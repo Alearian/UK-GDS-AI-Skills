@@ -1,0 +1,127 @@
+# GOV.UK Design System Expert — GDS Frontend v6.1.0
+
+You are an expert in the GOV.UK Design System (GDS). When building or reviewing any GOV.UK service page:
+- Use plain HTML with `govuk-*` CSS classes only
+- Never use Nunjucks macros — generate clean HTML
+- Always follow WCAG 2.1 AA accessibility requirements
+- Follow the one-thing-per-page pattern for question pages
+
+Install: `npm install govuk-frontend@6.1.0`
+
+---
+
+## CRITICAL v6.1.0 Breaking Changes (June 2025 brand refresh)
+
+1. **Header is `<div class="govuk-header">`, NOT `<header>`**
+2. **Tudor Crown SVG logotype** — single combined SVG (viewBox `0 0 324 60`, width 162, height 30) containing crown graphic + "GOV.UK" wordmark. Do NOT use the old separate crown SVG + `<span class="govuk-header__logotype-text">` approach.
+3. **Service name NOT in header** — use `<section class="govuk-service-navigation">` below the header
+4. **Footer is `<div class="govuk-footer">`, NOT `<footer>`**
+5. **Footer Tudor Crown** — crown-only SVG (viewBox `0 0 64 60`) with `role="presentation"`
+6. **Footer OGL licence** — inline SVG, not `<img>`
+7. **Phase banner**: "This is a new service. Help us improve it and give your feedback by email."
+
+Full SVG path data: see `gds-docs/components/header.md` and `gds-docs/components/footer.md`
+
+---
+
+## Page Structure
+
+Every GDS page: skip-link → header (`<div>`) → service-navigation → phase-banner → main content → footer (`<div>`)
+
+```html
+<!DOCTYPE html>
+<html lang="en" class="govuk-template">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Page title] – [Service name] – GOV.UK</title>
+  <link rel="stylesheet" href="/assets/govuk-frontend.min.css">
+</head>
+<body class="govuk-template__body">
+  <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+  <div class="govuk-header"><!-- Tudor Crown SVG only — see gds-docs/components/header.md --></div>
+  <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation">
+    <div class="govuk-width-container">
+      <div class="govuk-service-navigation__container">
+        <span class="govuk-service-navigation__service-name">
+          <a href="/" class="govuk-service-navigation__link">Service Name</a>
+        </span>
+      </div>
+    </div>
+  </section>
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content">
+      <!-- content -->
+    </main>
+  </div>
+  <!-- Footer — see gds-docs/components/footer.md -->
+  <script type="module">
+    import { initAll } from '/assets/govuk-frontend.min.js'
+    initAll()
+  </script>
+</body>
+</html>
+```
+
+---
+
+## Key Form Patterns
+
+**Text input with hint:**
+```html
+<div class="govuk-form-group">
+  <label class="govuk-label" for="id">Label</label>
+  <div id="id-hint" class="govuk-hint">Hint text</div>
+  <input class="govuk-input" id="id" name="name" type="text" aria-describedby="id-hint">
+</div>
+```
+
+**With error** — add `govuk-form-group--error`, error `<p>` before input, `govuk-input--error` on input, add error id to `aria-describedby`:
+```html
+<div class="govuk-form-group govuk-form-group--error">
+  <label class="govuk-label" for="id">Label</label>
+  <p id="id-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Message</p>
+  <input class="govuk-input govuk-input--error" id="id" name="name" type="text" aria-describedby="id-error">
+</div>
+```
+
+**Radios/Checkboxes** — always wrap in `<fieldset>` + `<legend>`. Use `govuk-fieldset__heading` inside legend when question is the `<h1>`.
+
+**Error summary** — always at top of page, before `<h1>`, when there are errors:
+```html
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">There is a problem</h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li><a href="#field-id">Error message</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Accessibility Rules
+
+- Every input/textarea/select needs `<label>` with matching `for`/`id`
+- Never use `placeholder` as a label substitute
+- All hint/error IDs in `aria-describedby` on the input
+- Error messages must have `<span class="govuk-visually-hidden">Error:</span>` prefix
+- Use `autocomplete` on personal data fields (name, email, address, etc.)
+- Skip link must be the first focusable element; `<main id="main-content">` required
+- Page title: `[Page title] – [Service name] – GOV.UK` (prefix `Error: ` on error pages)
+- Never remove focus styles
+
+---
+
+## GDS Docs Reference
+
+Full documentation for all 111 GOV.UK Design System pages is in `gds-docs/`:
+- `gds-docs/components/` — 34 components with full HTML examples
+- `gds-docs/patterns/` — 29 patterns with research-backed guidance
+- `gds-docs/styles/` — colour, layout, spacing, typography
+- `gds-docs/get-started/` — setup guides
+
+When building a specific component or pattern, read the relevant file from `gds-docs/` for the canonical HTML.

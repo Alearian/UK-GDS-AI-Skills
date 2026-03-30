@@ -1,0 +1,253 @@
+---
+description: GOV.UK Design System expert for building government service prototype websites using GDS Frontend v6.1.0. Activate for any HTML with govuk-* classes, GDS components, or government service pages.
+globs:
+alwaysApply: false
+---
+
+# GDS Website Builder — GOV.UK Design System v6.1.0
+
+GOV.UK Frontend v6.1.0 provides the CSS, JS, and component patterns for UK government services. All output uses plain HTML with `govuk-*` CSS classes. **No Nunjucks** — generate clean HTML.
+
+Install: `npm install govuk-frontend@6.1.0`
+
+In your HTML `<head>`:
+```html
+<link rel="stylesheet" href="/govuk-frontend/dist/govuk/govuk-frontend.min.css">
+```
+
+Before `</body>`:
+```html
+<script type="module">
+  import { initAll } from '/govuk-frontend/dist/govuk/govuk-frontend.min.js'
+  initAll()
+</script>
+```
+
+---
+
+## CRITICAL: v6.1.0 Breaking Changes from v5.x
+
+1. **Header is a `<div>`, NOT a `<header>`** — use `<div class="govuk-header">`
+2. **Header uses the new Tudor Crown SVG logotype** — a single combined SVG (viewBox `0 0 324 60`, width 162, height 30). Do NOT use the old separate crown + text approach.
+3. **Service name is NO LONGER in the header** — use the separate `govuk-service-navigation` component below the header instead
+4. **Footer is a `<div>`, NOT a `<footer>`** — use `<div class="govuk-footer">`
+5. **Footer has a standalone Tudor Crown SVG** — crown-only (viewBox `0 0 64 60`, width 32, height 30) with `role="presentation"`
+6. **Footer has an inline OGL licence logo SVG** — replaces old image reference
+7. **Phase banner wording** — "This is a new service. Help us improve it and give your feedback by email."
+
+---
+
+## Standard Page Layout
+
+```html
+<!DOCTYPE html>
+<html lang="en" class="govuk-template">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Page title] – [Service name] – GOV.UK</title>
+  <link rel="stylesheet" href="/assets/govuk-frontend.min.css">
+</head>
+<body class="govuk-template__body">
+  <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+  <!-- Header: <div> NOT <header>, Tudor Crown SVG only, NO service name -->
+  <div class="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="https://www.gov.uk/" class="govuk-header__homepage-link">
+          <!-- Tudor Crown SVG: fetch gds-docs/components/header.md for full SVG -->
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service navigation: service name lives HERE -->
+  <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation">
+    <div class="govuk-width-container">
+      <div class="govuk-service-navigation__container">
+        <span class="govuk-service-navigation__service-name">
+          <a href="/" class="govuk-service-navigation__link">My Service Name</a>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase banner -->
+  <div class="govuk-width-container">
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">Alpha</strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service. Help us improve it and
+          <a href="/feedback" class="govuk-link">give your feedback by email</a>.
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <!-- Page content -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer: <div> NOT <footer>. Fetch gds-docs/components/footer.md for full markup -->
+
+  <script type="module">
+    import { initAll } from '/assets/govuk-frontend.min.js'
+    initAll()
+  </script>
+</body>
+</html>
+```
+
+---
+
+## Core Form Components
+
+### Text input
+```html
+<div class="govuk-form-group">
+  <label class="govuk-label" for="full-name">Full name</label>
+  <div id="full-name-hint" class="govuk-hint">As it appears on your passport</div>
+  <input class="govuk-input" id="full-name" name="fullName" type="text"
+         aria-describedby="full-name-hint" autocomplete="name">
+</div>
+```
+
+With error — add `govuk-form-group--error`, `govuk-input--error`, and error message `<p>`:
+```html
+<div class="govuk-form-group govuk-form-group--error">
+  <label class="govuk-label" for="field">Label</label>
+  <p id="field-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Error message here
+  </p>
+  <input class="govuk-input govuk-input--error" id="field" name="field" type="text"
+         aria-describedby="field-error">
+</div>
+```
+
+### Radios
+```html
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">Have you changed your name?</h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="name" name="name" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="name">Yes</label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="name-2" name="name" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="name-2">No</label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+```
+Add `govuk-radios--inline` for side-by-side Yes/No.
+
+### Checkboxes
+```html
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">Which types of waste?</h1>
+    </legend>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">Carcasses</label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+```
+
+### Buttons
+```html
+<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">Save as draft</button>
+<a href="/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Start now
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+  </svg>
+</a>
+```
+
+### Error summary (always at top of page, before `<h1>`)
+```html
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">There is a problem</h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li><a href="#field-id">Error message</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Page Patterns
+
+- **Start page**: `<h1>` = service name, `govuk-button--start`, eligibility info, no form
+- **Question page**: one question per page, question is the `<h1>` (or fieldset legend)
+- **Check your answers**: `govuk-summary-list` with Change links, submit = "Confirm and send"
+- **Confirmation**: `govuk-panel govuk-panel--confirmation`, reference number, no back link
+- **Task list**: `govuk-task-list` with status tags (Completed/In progress/Not yet started)
+
+---
+
+## Typography
+```
+govuk-heading-xl  govuk-heading-l  govuk-heading-m  govuk-heading-s
+govuk-body  govuk-body-l  govuk-body-s
+govuk-caption-xl/l/m
+govuk-label  govuk-label--l/m/s
+govuk-hint  govuk-link  govuk-link--no-visited-state
+```
+
+---
+
+## Accessibility Rules (WCAG 2.1 AA)
+1. Every input/textarea/select must have a `<label>` with matching `for`/`id`
+2. Group related inputs in `<fieldset>` + `<legend>`
+3. All hint/error IDs must be in `aria-describedby` on the input
+4. Error messages must start with `<span class="govuk-visually-hidden">Error:</span>`
+5. Use `autocomplete` on personal data fields
+6. Skip link `<a href="#main-content">` must be first focusable element
+7. `<main id="main-content">` required
+8. Page title format: `[Page title] – [Service name] – GOV.UK`
+9. Error page title: prefix with `Error: `
+10. Never `outline: none` without replacement focus style
+
+---
+
+## Full Component & Pattern Reference
+
+Detailed HTML for every component and pattern is in the `gds-docs/` folder.
+
+**If you have the repo cloned in your project**, read directly:
+- `gds-docs/components/header.md` — full Tudor Crown SVG
+- `gds-docs/components/footer.md` — full footer with SVGs
+- `gds-docs/components/date-input.md`, `textarea.md`, `select.md`, `file-upload.md`, `password-input.md`
+- `gds-docs/patterns/check-answers.md`, `confirmation-pages.md`, `task-list.md` etc.
+
+**Or fetch via GitHub:**
+```
+https://raw.githubusercontent.com/YOUR_USERNAME/gds-ai-skills/main/gds-website-builder/gds-docs/components/header.md
+```
+
+Available sections: `components/` (34 files), `patterns/` (29 files), `styles/` (13 files), `get-started/` (6 files)
