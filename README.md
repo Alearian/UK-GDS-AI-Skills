@@ -131,22 +131,101 @@ Once installed, just ask naturally:
 
 ## Keeping docs up to date
 
-When GOV.UK Frontend releases a new version:
+When GOV.UK Frontend releases a new version, re-crawl the design system to update the bundled docs. This requires Docker Desktop and Python 3 — see [Setting up crawl4ai](#setting-up-crawl4ai) below.
 
-**Claude Code:**
+**Claude Code (with Docker MCP):**
 > *"Update the GDS docs"*
 
-The `gds-docs-update` skill will start the crawl4ai Docker container and re-crawl all 111 pages. Requires Docker Desktop and Python 3.
+The `gds-docs-update` skill handles everything — starts the container if needed, crawls all 111 pages, and writes the results to `gds-website-builder/gds-docs/`.
 
-**Other tools / manual:**
+**Claude Code (without Docker MCP) / manual:**
 ```bash
-cd gds-ai-skills/gds-docs-update/scripts
-pip install requests
-docker run -d --name crawl4ai -p 11235:11235 unclecode/crawl4ai:latest
+# Start crawl4ai if not already running
+docker start crawl4ai || docker run -d --name crawl4ai --restart unless-stopped -p 11235:11235 unclecode/crawl4ai:latest
+
+# Run the crawl
+cd gds-docs-update/scripts
 python crawl_site.py --output-dir ../gds-website-builder/gds-docs
 ```
 
-After updating, check `gds-docs/community/whats-new.md` for breaking changes.
+**Windows (PowerShell):**
+```powershell
+docker start crawl4ai
+cd gds-docs-update\scripts
+python crawl_site.py --output-dir ..\gds-website-builder\gds-docs
+```
+
+After updating, check `gds-website-builder/gds-docs/community/whats-new.md` for breaking changes and update the version number in `gds-website-builder/SKILL.md` if needed.
+
+---
+
+## Setting up crawl4ai
+
+[crawl4ai](https://github.com/unclecode/crawl4ai) is an open-source web crawler that runs in Docker. It is only needed for the `gds-docs-update` skill — the main `gds-website-builder` skill works out of the box without it.
+
+**Prerequisite:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+
+---
+
+### Option A — Claude Code with Docker MCP (easiest)
+
+If you have the Docker MCP server configured in Claude Code, just say:
+
+> *"Set up the crawl4ai Docker container"*
+
+Claude will pull the image, create the container, and confirm it is healthy — no terminal needed.
+
+**To add the Docker MCP to Claude Code:**
+```bash
+claude mcp add docker -- docker run -i --rm -v /var/run/docker.sock:/var/run/docker.sock mcp/docker
+```
+> **Windows:** replace `/var/run/docker.sock` with `//./pipe/docker_engine`
+
+---
+
+### Option B — Terminal / PowerShell
+
+**macOS / Linux:**
+```bash
+# Create and start the container (only needed once)
+docker run -d --name crawl4ai --restart unless-stopped -p 11235:11235 unclecode/crawl4ai:latest
+
+# Wait ~20 seconds, then verify it is healthy
+curl http://localhost:11235/health
+# Expected: {"status":"ok",...}
+```
+
+**Windows (PowerShell):**
+```powershell
+# Create and start the container (only needed once)
+docker run -d --name crawl4ai --restart unless-stopped -p 11235:11235 unclecode/crawl4ai:latest
+
+# Wait ~20 seconds, then verify it is healthy
+Invoke-RestMethod -Uri "http://localhost:11235/health"
+# Expected: status : ok
+```
+
+The `--restart unless-stopped` flag means the container starts automatically with Docker Desktop on future boots.
+
+---
+
+### Starting an existing container
+
+If you have set up crawl4ai before and it is currently stopped:
+
+```bash
+docker start crawl4ai
+```
+
+---
+
+### Updating crawl4ai to the latest version
+
+```bash
+docker stop crawl4ai && docker rm crawl4ai
+docker pull unclecode/crawl4ai:latest
+docker run -d --name crawl4ai --restart unless-stopped -p 11235:11235 unclecode/crawl4ai:latest
+```
 
 ---
 
