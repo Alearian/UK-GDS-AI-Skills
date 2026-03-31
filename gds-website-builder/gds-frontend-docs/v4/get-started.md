@@ -1,0 +1,84 @@
+#  [](./v4/get-started/#get-started.md)Get started
+Get one GOV.UK Frontend component working in your application, so you can test everything works before you add more components or styles.
+You will need to do all the following steps to get your component working.
+  1. Install GOV.UK Frontend.
+  2. Add the HTML for a component to your application.
+  3. Get the CSS working.
+  4. Get the font and images working.
+  5. Get the JavaScript working.
+
+##  [](./v4/get-started/#1-install.md)1. Install
+[Install GOV.UK Frontend using npm](./v4/installing-with-npm.md).
+If you’ve installed using precompiled files, get started with [a basic page](./v4/install-using-precompiled-files/#check-an-example-page.md) instead.
+##  [](./v4/get-started/#2-add-the-html-for-a-component-to-your-application.md)2. Add the HTML for a component to your application
+Go to the [example accordion component](https://design-system.service.gov.uk/components/accordion/#accordion-example) on the GOV.UK Design System website, then copy the HTML.
+Paste the HTML into a page or template in your application.
+##  [](./v4/get-started/#3-get-the-css-working.md)3. Get the CSS working
+  1. Add the following to the main Sass file in your project, so your Sass compiler adds all of GOV.UK Frontend’s styles to your CSS file.
+
+```
+@import "node_modules/govuk-frontend/govuk/all";
+
+```
+
+  2. Add your CSS file to your page layout if you need to. For example:
+
+```
+  <head>
+    ...
+    <link rel="stylesheet" href="<YOUR-CSS-FILE>.css">
+  </head>
+
+```
+
+  3. Run your application and check that the accordion displays correctly.
+
+The accordion will use a generic font until you get the font and images working, and will not be interactive until you get the JavaScript working.
+There are also different ways you can [import GOV.UK Frontend’s CSS](./v4/importing-css-assets-and-javascript/#css.md).
+##  [](./v4/get-started/#4-get-the-font-and-images-working.md)4. Get the font and images working
+Your component will not use the right font or images until you’ve added GOV.UK Frontend’s assets to your application.
+  1. Copy the following 2 folders:
+     * `/node_modules/govuk-frontend/govuk/assets/images` folder to `<YOUR-APP>/assets/images`
+     * `/node_modules/govuk-frontend/govuk/assets/fonts` folder to `<YOUR-APP>/assets/fonts`
+  2. Run your application, then use [the Fonts tab in Firefox Page Inspector](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_fonts#The_Fonts_tab) to check the accordion is using the GDS Transport font.
+
+In your live application, we recommend [using an automated task or your build pipeline](./v4/importing-css-assets-and-javascript/#font-and-image-assets.md) instead of copying the files manually.
+##  [](./v4/get-started/#5-get-the-javascript-working.md)5. Get the JavaScript working
+  1. Add the following to the top of the `<body>` section of your page template:
+
+```
+<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+```
+
+  2. Copy the `/node_modules/govuk-frontend/govuk/all.js` file to `<YOUR-JAVASCRIPT-FOLDER>/govuk.js`.
+  3. Import the file before the closing `</body>` tag of your page template, then run the `initAll` function to initialise all the components. For example:
+
+```
+<body>
+  ...
+  <script src="<YOUR-JAVASCRIPT-FOLDER>/govuk.js"></script>
+  <script>
+    window.GOVUKFrontend.initAll()
+  </script>
+</body>
+
+```
+
+  4. Run your application and check it works the same way as the Design System accordion example, by selecting the buttons and checking the accordion shows and hides sections.
+
+In your live application:
+  * you must use `initAll` to initialise all components that use GOV.UK Frontend’s JavaScript, or some components will not work correctly for disabled users who use assistive technologies
+  * we recommend [using an automated task or your build pipeline](./v4/importing-css-assets-and-javascript/#javascript.md) instead of copying the files manually
+
+You can now get the full code for page layouts and other components from the [Design System website](https://design-system.service.gov.uk/).
+  * [View source](https://github.com/alphagov/govuk-frontend-docs/blob/master/source/v4/get-started/index.html.md.erb)
+  * [Report problem](https://github.com/alphagov/govuk-frontend-docs/issues/new?body=Problem+with+%27Get+started+%28v4.x%29%27+%28https%3A%2F%2Ffrontend.design-system.service.gov.uk%2Fv4%2Fget-started%2F%29&labels=bug&title=Re%3A+%27Get+started+%28v4.x%29%27)
+  * [GitHub Repo](https://github.com/alphagov/govuk-frontend-docs)
+
+  * [Accessibility](https://design-system.service.gov.uk/accessibility/)
+  * [GOV.UK Design System](https://design-system.service.gov.uk/)
+  * [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/)
+
+All content is available under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), except where otherwise stated 
+[© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)

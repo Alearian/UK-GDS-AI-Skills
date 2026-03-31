@@ -1,0 +1,62 @@
+#  [](./install-using-precompiled-files/#try-gov-uk-frontend-using-precompiled-files.md)Try GOV.UK Frontend using precompiled files
+You can install GOV.UK Frontend by copying our CSS, JavaScript and asset files into your project. If you install this way, you can try GOV.UK Frontend in your application without having to make many changes.
+! ** Warning In your live application, you should [install with Node.js package manager (npm)](./installing-with-npm.md) instead. **
+##  [](./install-using-precompiled-files/#what-you-cannot-do-with-the-precompiled-files.md)What you cannot do with the precompiled files
+You’ll not be able to:
+  * change [Sass settings](./sass-api-reference.md), for example override colours or set your own font
+  * use the Nunjucks code from the [Design System website](https://design-system.service.gov.uk/) to add components
+  * import an individual component’s CSS or JavaScript
+  * use GOV.UK Frontend’s colours or mixins in your custom code
+
+##  [](./install-using-precompiled-files/#copy-and-install-the-precompiled-files.md)Copy and install the precompiled files
+  1. Download the `release-<VERSION-NUMBER>.zip` file at the bottom of the [latest GOV.UK Frontend release note](https://github.com/alphagov/govuk-frontend/releases/latest).
+  2. Unzip the zip file.
+  3. Copy the `assets` folder to the root of your project’s public folder. This is so, for example, `<YOUR-SITE-URL>/assets/images/govuk-crest.png` shows the `govuk-crest.png` image in your users’ browsers.
+  4. Copy the `.css` and `.css.map` files to a stylesheets folder in the root of your project’s public folder. This is so, for example, `<YOUR-SITE-URL>/stylesheets/govuk-frontend-<VERSION-NUMBER>.min.css` shows the CSS file in your users’ browsers.
+  5. Copy the `.js` and `.js.map` files to a JavaScripts folder in the root of your project’s public folder. This is so, for example, `<YOUR-SITE-URL>/javascripts/govuk-frontend-<VERSION-NUMBER>.min.js` shows the JavaScript file in your users’ browsers.
+
+##  [](./install-using-precompiled-files/#create-an-example-page-to-check-for-errors.md)Create an example page to check for errors
+  1. Create a page in your project using the following HTML (in your live application, you should use the [Design System page template](https://design-system.service.gov.uk/styles/page-template/) instead):
+
+```
+<!DOCTYPE html>
+<html lang="en" class="govuk-template">
+  <head>
+    <title>Example - GOV.UK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="manifest" href="/assets/manifest.json">
+    <link rel="stylesheet" href="/stylesheets/govuk-frontend-<VERSION-NUMBER>.min.css">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+    <!-- component HTML -->
+    <script type="module" src="/javascripts/govuk-frontend-<VERSION-NUMBER>.min.js"></script>
+    <script type="module">
+      import { initAll } from '/javascripts/govuk-frontend-<VERSION-NUMBER>.min.js'
+      initAll()
+    </script>
+  </body>
+</html>
+
+```
+
+  2. Replace `<VERSION-NUMBER>` so the 3 filenames match the files you [copied from GOV.UK Frontend’s GitHub repo](./install-using-precompiled-files/#copy-and-install-the-precompiled-files.md).
+  3. Go to the [example accordion component](https://design-system.service.gov.uk/components/accordion/#accordion-example) on the Design System website and copy the HTML from the first example.
+  4. Replace `<!-- component HTML -->` with the accordion HTML you copied.
+  5. Run your application and check for errors in the browser console - it should work the same way as the [Design System accordion example](https://design-system.service.gov.uk/components/accordion/default/index.html) by selecting the buttons and checking the accordion ‘shows’ and ‘hides’ sections.
+
+You can now get the full code for page layouts and other components from the [Design System website](https://design-system.service.gov.uk/).
+If the accordion does not work, you can find out more about how to import GOV.UK Frontend’s CSS and JavaScript in:
+  * [Import CSS](./import-css.md)
+  * [Import JavaScript](./import-javascript.md)
+
+  * [View source](https://github.com/alphagov/govuk-frontend-docs/blob/master/source/install-using-precompiled-files/index.html.md.erb)
+  * [Report problem](https://github.com/alphagov/govuk-frontend-docs/issues/new?body=Problem+with+%27Install+using+precompiled+files%27+%28https%3A%2F%2Ffrontend.design-system.service.gov.uk%2Finstall-using-precompiled-files%2F%29&labels=bug&title=Re%3A+%27Install+using+precompiled+files%27)
+  * [GitHub Repo](https://github.com/alphagov/govuk-frontend-docs)
+
+  * [Accessibility](https://design-system.service.gov.uk/accessibility/)
+  * [GOV.UK Design System](https://design-system.service.gov.uk/)
+  * [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/)
+
+All content is available under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), except where otherwise stated 
+[© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)

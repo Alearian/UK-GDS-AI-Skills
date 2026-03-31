@@ -1,0 +1,13 @@
+# Cloned git repositories — large, fetched on demand via sync_git.py
+gds-website-builder/gds_git/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -17,8 +17,10 @@ The `gds-docs-update` companion skill keeps the bundled docs fresh by re-crawlin
 
 ### `gds-docs-update`
 - Crawls all 111 pages of `https://design-system.service.gov.uk/` using the [crawl4ai](https://github.com/unclecode/crawl4ai) Docker container
-- Cleans and saves markdown to `gds-website-builder/gds-docs/` so the main skill always has the latest docs
-- Supports full re-crawl or single-section updates
+- Crawls `https://frontend.design-system.service.gov.uk/` (how-to guides for installation, CSS/JS, configuration)
+- Clones or pulls `https://github.com/alphagov/govuk-design-system` locally for source-code browsing
+- Generates `DOCS_INDEX.md` so the website-builder skill can load only the docs it needs
+- Supports full re-crawl, single-section updates, and shallow git clones
 
 ---
 
@@ -93,33 +95,54 @@ The skill will start the crawl4ai Docker container and re-crawl all 111 pages, w
 
 ```
 gds-website-builder/
-  SKILL.md              — Main skill definition loaded by Claude Code
-  gds-docs/             — Bundled GOV.UK Design System docs (111 markdown files)
-    components/         — 34 component pages
-    patterns/           — 29 pattern pages
-    styles/             — 13 style pages
-    get-started/        — 6 get-started pages
-    community/          — 15 community pages
-    accessibility/      — 1 accessibility page
+  SKILL.md                  — Main skill definition loaded by Claude Code
+  DOCS_INDEX.md             — Auto-generated index for selective doc loading (run build_index.py)
+  gds-docs/                 — Design System website docs (111 markdown files)
+    components/             — 34 component pages
+    patterns/               — 29 pattern pages
+    styles/                 — 13 style pages
+    get-started/            — 6 get-started pages
+    community/              — 15 community pages
+    accessibility/          — 1 accessibility page
+  gds-frontend-docs/        — Frontend how-to docs (auto-discovered, run crawl_frontend.py)
+    index.md
+    installing-with-npm.md
+    importing-css.md  importing-javascript.md  configure-components.md  ...
+  gds_git/
+    govuk-design-system/    — GitHub source repo (run sync_git.py)
+      app/src/views/        — Nunjucks macros
+      src/                  — SASS source
 
 gds-docs-update/
-  SKILL.md              — Docs-update skill definition
+  SKILL.md                  — Docs-update skill definition
   scripts/
-    crawl_site.py       — Main crawl script
-    site_pages.py       — Master list of all 111 URLs
-    process_md.py       — Markdown cleaner
-    save_toplevel.py    — Legacy script
+    crawl_site.py           — Crawls design-system.service.gov.uk (111 pages)
+    site_pages.py           — Master list of all 111 URLs
+    crawl_frontend.py       — Crawls frontend.design-system.service.gov.uk (auto-discovers pages)
+    sync_git.py             — Clones or pulls alphagov/govuk-design-system
+    build_index.py          — Generates DOCS_INDEX.md
+    process_md.py           — Standalone markdown cleaner (one-off use)
+    save_toplevel.py        — Legacy script (superseded by crawl_site.py)
 ```
 
 ---
 
 ## Keeping docs up to date
 
-When GOV.UK Frontend releases a new version:
+When GOV.UK Frontend releases a new version, or periodically to stay current:
 
 1. Ask Claude: *"Update the GDS docs"*
-2. Review `gds-docs/community/whats-new.md` for breaking changes
-3. If the version number or breaking-change rules have changed, ask Claude: *"Update the gds-website-builder skill for the new version"*
+2. This runs all four scripts in sequence (crawl_site, crawl_frontend, sync_git, build_index)
+3. Review `gds-docs/community/whats-new.md` for breaking changes
+4. If the version number or component rules have changed, ask Claude: *"Update the gds-website-builder skill for the new version"*
+
+### What each source adds
+
+| Source | Adds |
+|---|---|
+| `gds-docs/` | Authoritative component HTML, pattern guidance, accessibility rules |
+| `gds-frontend-docs/` | How to install, configure, and initialise govuk-frontend in your project |
+| `gds_git/govuk-design-system/` | Nunjucks macros, SASS variables, component fixtures, release history |
 
 ---
 

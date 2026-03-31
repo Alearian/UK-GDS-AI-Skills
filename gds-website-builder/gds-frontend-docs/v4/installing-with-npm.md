@@ -1,0 +1,37 @@
+#  [](./v4/installing-with-npm/#install-with-node-js-package-manager-npm.md)Install with Node.js package manager (npm)
+##  [](./v4/installing-with-npm/#requirements.md)Requirements
+  1. [Install Node.js](https://nodejs.org/en/).
+If you have not already installed version 4.2.0 or later of Node.js, install the latest Long Term Support (LTS) version.
+  2. `cd` to the root of your project and check if you have a [`package.json` file](https://docs.npmjs.com/files/package.json). If you do not have the file, create it by running:
+
+```
+npm init
+
+```
+
+  3. Install [Dart Sass](https://www.npmjs.com/package/sass) - version 1.0.0 or higher.
+If you’re using Dart Sass 1.33.0 or greater, you may see deprecation warnings when compiling your Sass. You can [silence deprecation warnings caused by dependencies](./v4/importing-css-assets-and-javascript/#silence-deprecation-warnings-from-dependencies-in-dart-sass.md) if required.
+Do not use either LibSass or Ruby Sass, which are deprecated, for new projects.
+Although versions 4 and 5 of GOV.UK Frontend support LibSass (version 3.3.0 and above) and Ruby Sass (version 3.4.0 and above), version 6 onwards does not. If you’re using either of these Sass compilers, you should [migrate to Dart Sass](https://sass-lang.com/blog/libsass-is-deprecated#how-do-i-migrate) as soon as you reasonably can.
+
+You can also [install Nunjucks v3.0.0 or later](https://www.npmjs.com/package/nunjucks) if you want to [use GOV.UK Frontend’s Nunjucks macros](./v4/use-nunjucks.md).
+##  [](./v4/installing-with-npm/#install-gov-uk-frontend.md)Install GOV.UK Frontend
+Run:
+
+```
+npm install govuk-frontend@latest-v4 --save
+
+```
+
+When the installation finishes, the `govuk-frontend` package will be in your `node_modules` folder.
+You should now get started by [getting the CSS, assets and JavaScript working](./v4/get-started.md) with one GOV.UK Frontend component.
+  * [View source](https://github.com/alphagov/govuk-frontend-docs/blob/master/source/v4/installing-with-npm/index.html.md.erb)
+  * [Report problem](https://github.com/alphagov/govuk-frontend-docs/issues/new?body=Problem+with+%27Install+with+Node.js+package+manager+%28npm%29+%28v4.x%29%27+%28https%3A%2F%2Ffrontend.design-system.service.gov.uk%2Fv4%2Finstalling-with-npm%2F%29&labels=bug&title=Re%3A+%27Install+with+Node.js+package+manager+%28npm%29+%28v4.x%29%27)
+  * [GitHub Repo](https://github.com/alphagov/govuk-frontend-docs)
+
+  * [Accessibility](https://design-system.service.gov.uk/accessibility/)
+  * [GOV.UK Design System](https://design-system.service.gov.uk/)
+  * [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/)
+
+All content is available under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), except where otherwise stated 
+[© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)

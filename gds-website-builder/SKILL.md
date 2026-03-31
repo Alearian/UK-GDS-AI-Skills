@@ -41,6 +41,38 @@ Before `</body>`:
 
 ---
 
+## Reference docs — selective loading
+
+Three local reference sources are available. **Always read `DOCS_INDEX.md` first**, then
+load only the specific file(s) needed. Never load all docs at once.
+
+| Source | Location | What it contains |
+|---|---|---|
+| `DOCS_INDEX.md` | `~/.claude/skills/gds-website-builder/DOCS_INDEX.md` | Full index — read this first to find the right file |
+| Design System docs | `~/.claude/skills/gds-website-builder/gds-docs/` | Components, patterns, styles, accessibility |
+| Frontend how-to docs | `~/.claude/skills/gds-website-builder/gds-frontend-docs/` | NPM setup, CSS/JS importing, configuration |
+| Source repo | `~/.claude/skills/gds-website-builder/gds_git/govuk-design-system/` | Nunjucks macros, SASS source |
+
+### Quick lookup rules
+
+- **Building a specific component** → read `gds-docs/components/{component-name}.md`
+- **Implementing a pattern** → read `gds-docs/patterns/{pattern-name}.md`
+- **CSS/JS setup, NPM install, or configuration** → read from `gds-frontend-docs/`
+- **Need Nunjucks macro or SASS variable** → Grep `gds_git/govuk-design-system/`
+- **Unsure what file to read** → read `DOCS_INDEX.md` first, then the specific file
+
+### Example: building a button component
+
+```
+1. Read DOCS_INDEX.md  →  confirms gds-docs/components/button.md exists
+2. Read gds-docs/components/button.md  →  get the correct HTML
+3. Done — no other files needed
+```
+
+Run the `gds-docs-update` skill to populate or refresh any of these sources.
+
+---
+
 ## CRITICAL: v6.1.0 Breaking Changes from v5.x
 
 The June 2025 GOV.UK brand refresh introduced several **breaking changes**. Always follow these rules:

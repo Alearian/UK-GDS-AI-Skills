@@ -1,0 +1,106 @@
+#  [](./configure-components/#configure-components.md)Configure components
+You can configure some of the components in GOV.UK Frontend to customise their behaviour or to [localise their JavaScript to use a language other than English](./localise-govuk-frontend.md).
+You can configure a component by:
+  * [setting Nunjucks macro options](./configure-components/#setting-nunjucks-macro-options.md)
+  * [passing JavaScript configuration](./configure-components/#passing-javascript-configuration.md)
+  * [adding HTML data attributes](./configure-components/#adding-html-data-attributes.md)
+
+Configuration passed through data attributes in the HTML or Nunjucks macro options will take precedence over any JavaScript configuration.
+To learn more about how configuration is passed from Nunjucks macros to HTML data attributes, see advanced examples in [the localisation options](./localise-govuk-frontend.md).
+##  [](./configure-components/#setting-nunjucks-macro-options.md)Setting Nunjucks macro options
+If you’re using the Nunjucks macros, you can read about [configuring a component](./use-nunjucks/#configuring-a-component.md) or find all of the configuration options published on the [GOV.UK Design System website](https://design-system.service.gov.uk/).
+##  [](./configure-components/#passing-javascript-configuration.md)Passing JavaScript configuration
+Read the [JavaScript API Reference](./javascript-api-reference.md) for the list of options in each component configuration.
+The examples below follow our recommended [Import JavaScript using a bundler](./import-javascript/#import-javascript-using-a-bundler.md) approach and demonstrate how to:
+  * [configure instances of specific components using the `createAll` function](./configure-components/#configure-instances-of-specific-components-using-the-createall-function.md)
+  * [configure all components using the `initAll` function](./configure-components/#configure-all-components-using-the-initall-function.md)
+  * [check for JavaScript errors in the browser console](./configure-components/#javascript-errors-in-the-browser-console.md)
+
+###  [](./configure-components/#configure-instances-of-specific-components-using-the-createall-function.md)Configure instances of specific components using the `createAll` function
+You can pass a configuration object into `createAll`‘s second argument when creating an instance of a component in JavaScript:
+
+```
+import { CharacterCount, createAll } from 'govuk-frontend'
+
+createAll(CharacterCount, {
+  maxlength: 500,
+  i18n: {
+    charactersAtLimit: 'No characters left',
+
+    // Object value
+    charactersUnderLimit: {
+      other: '%{count} characters to go',
+      one: '%{count} character to go'
+    }
+  }
+})
+
+```
+
+Read the [JavaScript API Reference](./javascript-api-reference.md) for the list of options in each component configuration.
+###  [](./configure-components/#configure-all-components-using-the-initall-function.md)Configure all components using the `initAll` function
+You can pass configuration for components when initialising GOV.UK Frontend using the `initAll` function.
+You can do this by including key-value pairs of camel-cased component names with their configuration options:
+
+```
+import { initAll } from 'govuk-frontend'
+
+initAll({
+  characterCount: {
+    maxlength: 500,
+    i18n: {
+      charactersAtLimit: 'No characters left'
+    }
+  }
+})
+
+```
+
+###  [](./configure-components/#javascript-errors-in-the-browser-console.md)JavaScript errors in the browser console
+Error messages from components can be logged in the browser console when HTML elements are not found, or to explain why they failed to initialise.
+For example, when:
+  * GOV.UK Frontend is not supported in the current browser
+  * Component templates have missing changes from our release notes
+  * Component JavaScript configuration does not match our documentation
+
+If our inline JavaScript snippet from [Import JavaScript](./import-javascript/#before-you-start.md) was not added to the top of the `<body class="govuk-template__body">` section you’ll see this error:
+
+```
+SupportError: GOV.UK Frontend initialised without `<body class="govuk-frontend-supported">` from template `<script>` snippet
+
+```
+
+You should check your application works without errors or some components will not work correctly.
+##  [](./configure-components/#adding-html-data-attributes.md)Adding HTML data attributes
+If you’re using HTML, you can pass configuration by adding data attributes to the component’s outermost element (the element that has the `data-module` attribute). This is how our Nunjucks macros forward the configuration to the JavaScript components in the browser. Data attributes use kebab-case.
+Some configuration options are grouped under a namespace to keep related options together. For example, [the localisation options](./localise-govuk-frontend.md) are grouped under the `i18n` namespace. When using these options, include the namespace as a prefix followed by a period as part of the attribute name.
+For options accepting object values, you’ll need to set one attribute for each key of that object. Suffix the attribute name (including any namespace) with a period and the name of the key in the object.
+This example shows the opening tag of a character count component with some configuration options including:
+  * a specific number of characters (non-namespaced configuration)
+  * a new message for when users reach the specified number of characters (namespaced configuration)
+  * two plural forms for when users are under the specified limit of characters (namespaced configuration + object value)
+
+```
+<div
+  data-module="govuk-character-count"
+  data-maxlength="500"
+  data-i18n.characters-at-limit="No characters left"
+  data-i18n.characters-under-limit.other="%{count} characters to go"
+  data-i18n.characters-under-limit.one="%{count} character to go"
+>
+
+```
+
+If your configuration contains [quotes or other reserved HTML characters](https://developer.mozilla.org/en-US/docs/Glossary/Entity#reserved_characters), you’ll need to escape those characters.
+Configuration is read from data attributes when the component is initialised. Changes to the data attributes made after the component has been initialised will have no effect on the behaviour of the component.
+You’ll need to convert the [JavaScript API Reference](./javascript-api-reference.md) configuration options into kebab-case when using data attributes in HTML.
+  * [View source](https://github.com/alphagov/govuk-frontend-docs/blob/master/source/configure-components/index.html.md.erb)
+  * [Report problem](https://github.com/alphagov/govuk-frontend-docs/issues/new?body=Problem+with+%27Configure+components%27+%28https%3A%2F%2Ffrontend.design-system.service.gov.uk%2Fconfigure-components%2F%29&labels=bug&title=Re%3A+%27Configure+components%27)
+  * [GitHub Repo](https://github.com/alphagov/govuk-frontend-docs)
+
+  * [Accessibility](https://design-system.service.gov.uk/accessibility/)
+  * [GOV.UK Design System](https://design-system.service.gov.uk/)
+  * [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/)
+
+All content is available under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), except where otherwise stated 
+[© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)
