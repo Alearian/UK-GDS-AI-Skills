@@ -26,14 +26,14 @@ Keeps the bundled docs fresh by re-crawling `design-system.service.gov.uk`. Run 
 
 **macOS / Linux:**
 ```bash
-git clone https://github.com/YOUR_USERNAME/gds-ai-skills.git
+git clone https://github.com/Alearian/gds-ai-skills.git
 cd gds-ai-skills
 bash install.sh
 ```
 
 **Windows (PowerShell):**
 ```powershell
-git clone https://github.com/YOUR_USERNAME/gds-ai-skills.git
+git clone https://github.com/Alearian/gds-ai-skills.git
 cd gds-ai-skills
 .\install.ps1
 ```
@@ -48,14 +48,14 @@ Install into your project directory:
 
 **macOS / Linux:**
 ```bash
-git clone https://github.com/YOUR_USERNAME/gds-ai-skills.git
+git clone https://github.com/Alearian/gds-ai-skills.git
 cd gds-ai-skills
 bash install.sh --tool cursor
 ```
 
 **Windows:**
 ```powershell
-git clone https://github.com/YOUR_USERNAME/gds-ai-skills.git
+git clone https://github.com/Alearian/gds-ai-skills.git
 cd gds-ai-skills
 .\install.ps1 -Tool cursor
 ```
