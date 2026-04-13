@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"D:/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-docs-update/SKILL.md\" \"C:/Users/Develepor/.claude/skills/gds-docs-update/SKILL.md\")",
+      "Bash(cp \"D:/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-website-builder/SKILL.md\" \"C:/Users/Develepor/.claude/skills/gds-website-builder/SKILL.md\")",
+      "Bash(cp \"D:/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-docs-update/scripts/crawl_frontend.py\" \"C:/Users/Develepor/.claude/skills/gds-docs-update/scripts/\")",
+      "Bash(cp \"D:/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-docs-update/scripts/sync_git.py\" \"C:/Users/Develepor/.claude/skills/gds-docs-update/scripts/\")",
+      "Bash(cp \"D:/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-docs-update/scripts/build_index.py\" \"C:/Users/Develepor/.claude/skills/gds-docs-update/scripts/\")",
+      "Bash(docker ps:*)",
+      "Bash(docker start:*)",
+      "Read(//d/Source/FurnissSoftware/Skills/UK GDS AI Skills/$USERPROFILE/.claude/skills/gds-docs-update/**)",
+      "Bash(python crawl_site.py --output-dir \"$USERPROFILE/.claude/skills/gds-website-builder/gds-docs\")",
+      "Bash(python crawl_frontend.py --output-dir \"$USERPROFILE/.claude/skills/gds-website-builder/gds-frontend-docs\")",
+      "Bash(python sync_git.py --shallow --target-dir \"$USERPROFILE/.claude/skills/gds-website-builder/gds_git/govuk-design-system\")",
+      "Bash(python build_index.py --gds-docs \"$USERPROFILE/.claude/skills/gds-website-builder/gds-docs\" --frontend-docs \"$USERPROFILE/.claude/skills/gds-website-builder/gds-frontend-docs\" --git-dir \"$USERPROFILE/.claude/skills/gds-website-builder/gds_git/govuk-design-system\" --output \"$USERPROFILE/.claude/skills/gds-website-builder/DOCS_INDEX.md\")",
+      "Bash(python -c \"import json,sys; data=json.load\\(sys.stdin\\); [print\\(item[''''text'''']\\) for item in data if item.get\\(''''type''''\\)==''''text'''']\")",
+      "Bash(npm install:*)",
+      "Bash(node -e \"const p = require\\(''./node_modules/govuk-frontend/package.json''\\); console.log\\(''govuk-frontend installed:'', p.version\\)\")",
+      "Bash(npm run:*)",
+      "Bash(cp -r \"/c/Users/Develepor/.claude/skills/gds-website-builder/gds-frontend-docs\" \"/d/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-website-builder/gds-frontend-docs\")",
+      "Bash(cp \"/c/Users/Develepor/.claude/skills/gds-website-builder/DOCS_INDEX.md\" \"/d/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-website-builder/DOCS_INDEX.md\")"
+    ]
+  }
+}
