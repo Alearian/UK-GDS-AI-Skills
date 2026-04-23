@@ -18,7 +18,10 @@
       "Bash(node -e \"const p = require\\(''./node_modules/govuk-frontend/package.json''\\); console.log\\(''govuk-frontend installed:'', p.version\\)\")",
       "Bash(npm run:*)",
       "Bash(cp -r \"/c/Users/Develepor/.claude/skills/gds-website-builder/gds-frontend-docs\" \"/d/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-website-builder/gds-frontend-docs\")",
-      "Bash(cp \"/c/Users/Develepor/.claude/skills/gds-website-builder/DOCS_INDEX.md\" \"/d/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-website-builder/DOCS_INDEX.md\")"
+      "Bash(cp \"/c/Users/Develepor/.claude/skills/gds-website-builder/DOCS_INDEX.md\" \"/d/Source/FurnissSoftware/Skills/UK GDS AI Skills/gds-website-builder/DOCS_INDEX.md\")",
+      "mcp__MCP_DOCKER__docker",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
