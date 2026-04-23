@@ -1,0 +1,17 @@
+{
+  "name": "gds-v6-sample",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "sass --load-path=node_modules src/styles/main.scss dist/main.css --style=compressed",
+    "build:assets": "node scripts/copy-assets.mjs",
+    "build": "npm run build:css && npm run build:assets",
+    "watch": "sass --load-path=node_modules --watch src/styles/main.scss:dist/main.css"
+  },
+  "dependencies": {
+    "govuk-frontend": "6.1.0"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

@@ -471,6 +471,13 @@ Read `get-started/<name>.md`:
 ### Accessibility
 Read `accessibility/accessibility-strategy.md` for the GOV.UK accessibility strategy.
 
+### Department-specific guidance
+When the user explicitly names a UK government department (MoJ, DfT, MoD, FCDO, HO, HMRC, DWP, HMPPS, etc.), read `departments.md`. It covers:
+- The correct footer `meta` text-link pattern for departmental attribution (no logos — the header never changes)
+- Department reference table (gov.uk URLs, frontend library)
+- MoJ Frontend extension setup for MoJ/HMPPS/HMCTS services
+- What not to do (no departmental logos, no replacing Crown copyright)
+
 ---
 
 **Usage:** When a user asks about a specific component, pattern, or style — read the relevant file from the base path above before generating HTML. The collated docs contain the canonical HTML, all variant examples, and up-to-date guidance from the live design system.

@@ -1,0 +1,21 @@
+// GOV.UK Frontend v6.1.0 — Sass entry point
+// Compiles the full design system from source. No precompiled .min.css.
+//
+// Override any v6 Sass settings BEFORE the @forward of "all".
+// Example: $govuk-assets-path: "/assets/";
+
+@use "govuk-frontend/dist/govuk" with (
+  $govuk-assets-path: "/assets/"
+);
+
+// Service-specific styles go below this line.
+// Prefer the v6 helpers over raw CSS: govuk.govuk-font(), govuk.govuk-spacing(), govuk.govuk-media-query().
+
+@use "govuk-frontend/dist/govuk/settings" as *;
+@use "govuk-frontend/dist/govuk/tools" as *;
+@use "govuk-frontend/dist/govuk/helpers" as *;
+
+.app-hero {
+  padding: govuk-spacing(6) 0;
+  background-color: govuk-colour("light-grey");
+}

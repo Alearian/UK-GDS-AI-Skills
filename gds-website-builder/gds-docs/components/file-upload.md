@@ -432,7 +432,7 @@ With the improved File upload component, users can say commands for interacting 
 However, due to [browser security features](https://developer.mozilla.org/en-US/docs/Web/Security/User_activation), this may not work right away or on subsequent interactions on the same page. If users cannot interact with the component, they’ll first need to perform another action, such as a mouse click.
 ## Research on this component
 ### Colour and ‘interaction state’ updates from the GOV.UK brand refresh
-In [February 2026], we updated the improved File upload component.
+In February 2026, we updated the improved File upload component.
 As part of colour changes to the GOV.UK brand, we improved the various ‘states’ that show as the user interacts with the component. For example, we’ve made it easier for users to see when they’ve added a file.
 We’ve also updated the colours to make user interaction more consistent and less distracting than before.
 ### Known issues and gaps

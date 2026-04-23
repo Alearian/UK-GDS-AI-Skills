@@ -20,5 +20,6 @@ If you want to contact the team you can [get in touch via email or Slack](./cont
   * Lamiece Hassan – User Researcher
   * Lewis Darlow – Interaction Designer
   * Mia Allers – Senior Graphic Designer
+  * Nick Colley – Senior Frontend Developer
   * Owen Jones – Senior Frontend Developer
   * Romaric Pascal – Senior Frontend Developer
