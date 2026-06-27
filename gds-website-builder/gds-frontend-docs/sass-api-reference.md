@@ -1,9 +1,9 @@
-#  [](./sass-api-reference/#sass-api-reference.md)Sass API reference
+﻿#  [](./sass-api-reference/#sass-api-reference.md)Sass API reference
 ##  [](./sass-api-reference/#settings.md)Settings
 ###  [](./sass-api-reference/#assets.md)Assets
 ####  [](./sass-api-reference/#govuk-assets-path.md)$govuk-assets-path
 Path to the assets directory, with trailing slash.
-This is the directory where the images and fonts subdirectories live. You will need to make this directory available via your application – see the README for details.
+This is the directory where the images and fonts subdirectories live. You will need to make this directory available via your application â€“ see the README for details.
 #####  [](./sass-api-reference/#default-value.md)Default value
 
 ```
@@ -11,7 +11,7 @@ $govuk-assets-path: "/assets/";
 
 ```
 
-[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L14-L14)
+[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L14-L14)
 ####  [](./sass-api-reference/#govuk-images-path.md)$govuk-images-path
 Path to the images folder, with trailing slash.
 #####  [](./sass-api-reference/#govuk-images-path-default-value.md)Default value
@@ -21,7 +21,7 @@ $govuk-images-path: "#{$govuk-assets-path}images/";
 
 ```
 
-[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L21-L21)
+[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L21-L21)
 ####  [](./sass-api-reference/#govuk-fonts-path.md)$govuk-fonts-path
 Path to the fonts folder, with trailing slash.
 #####  [](./sass-api-reference/#govuk-fonts-path-default-value.md)Default value
@@ -31,10 +31,10 @@ $govuk-fonts-path: "#{$govuk-assets-path}fonts/";
 
 ```
 
-[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L28-L28)
+[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L28-L28)
 ####  [](./sass-api-reference/#govuk-image-url-function.md)$govuk-image-url-function
 Custom image URL function
-If the built-in image URL helper does not meet your needs, you can specify the name of a custom handler – either built in or by writing your own function.
+If the built-in image URL helper does not meet your needs, you can specify the name of a custom handler â€“ either built in or by writing your own function.
 If you are writing your own handler, ensure that it returns a string wrapped with `url()`
 #####  [](./sass-api-reference/#govuk-image-url-function-default-value.md)Default value
 
@@ -74,10 +74,10 @@ $govuk-image-url-function: meta.get-function("image-url", $module: "url-handlers
 
 ```
 
-[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L64-L64)
+[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L64-L64)
 ####  [](./sass-api-reference/#govuk-font-url-function.md)$govuk-font-url-function
 Custom font URL function
-If the built-in font URL helper does not meet your needs, you can specify the name of a custom handler – either built in or by writing your own function.
+If the built-in font URL helper does not meet your needs, you can specify the name of a custom handler â€“ either built in or by writing your own function.
 If you are writing your own handler, ensure that it returns a string wrapped with `url()`
 #####  [](./sass-api-reference/#govuk-font-url-function-default-value.md)Default value
 
@@ -117,7 +117,7 @@ $govuk-font-url-function: meta.get-function("font-url", $module: "url-handlers")
 
 ```
 
-[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L100-L100)
+[ View source code for _assets.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_assets.scss#L100-L100)
 ###  [](./sass-api-reference/#colours.md)Colours
 ####  [](./sass-api-reference/#govuk-default-functional-colours.md)$govuk-default-functional-colours
 Default definitions of the functional colours
@@ -214,7 +214,7 @@ $govuk-default-functional-colours: (
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L17-L103)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L17-L103)
 ####  [](./sass-api-reference/#govuk-functional-colours.md)$govuk-functional-colours
 Functional colours for the GOV.UK palette.
 Each functional colour is represented by a name (for example `'brand'`) to which the map associates either:
@@ -230,7 +230,7 @@ $govuk-functional-colours: $govuk-default-functional-colours;
 
 ```
 
-#####  [](./sass-api-reference/#example-redefining-functional-colours-by-setting-them-before-import.md)Example: – Redefining functional colours by setting them before import
+#####  [](./sass-api-reference/#example-redefining-functional-colours-by-setting-them-before-import.md)Example: â€“ Redefining functional colours by setting them before import
 
 ```
 // These will be merged with the default functional colours
@@ -245,7 +245,7 @@ $govuk-functional-colours: (
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L160-L160)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L160-L160)
 ####  [](./sass-api-reference/#govuk-brand-colour.md)$govuk-brand-colour
 Brand colour
 #####  [](./sass-api-reference/#usage.md)Usage
@@ -259,7 +259,7 @@ $govuk-brand-colour: govuk-functional-colour(brand);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L205-L205)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L205-L205)
 ####  [](./sass-api-reference/#govuk-text-colour.md)$govuk-text-colour
 Text colour
 #####  [](./sass-api-reference/#govuk-text-colour-usage.md)Usage
@@ -273,7 +273,7 @@ $govuk-text-colour: govuk-functional-colour(text);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L215-L215)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L215-L215)
 ####  [](./sass-api-reference/#govuk-template-background-colour.md)$govuk-template-background-colour
 Template background colour
 Used by components that want to give the illusion of extending the template background (such as the footer and cookie banner).
@@ -288,7 +288,7 @@ $govuk-template-background-colour: govuk-functional-colour(template-background);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L228-L228)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L228-L228)
 ####  [](./sass-api-reference/#govuk-body-background-colour.md)$govuk-body-background-colour
 Body background colour
 #####  [](./sass-api-reference/#govuk-body-background-colour-usage.md)Usage
@@ -302,10 +302,10 @@ $govuk-body-background-colour: govuk-functional-colour(body-background);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L238-L238)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L238-L238)
 ####  [](./sass-api-reference/#govuk-print-text-colour.md)$govuk-print-text-colour
 Text colour for print media
-Use ‘true black’ to avoid printers using colour ink to print body text
+Use â€˜true blackâ€™ to avoid printers using colour ink to print body text
 #####  [](./sass-api-reference/#govuk-print-text-colour-usage.md)Usage
 ! ** Warning
 Deprecated: Variables for applied colours are deprecated. Please use the `govuk-functional-colour` function instead: `govuk-functional-colour(print-text)`.
@@ -317,10 +317,10 @@ $govuk-print-text-colour: govuk-functional-colour(print-text);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L250-L250)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L250-L250)
 ####  [](./sass-api-reference/#govuk-secondary-text-colour.md)$govuk-secondary-text-colour
 Secondary text colour
-Used in for example ‘muted’ text and help text.
+Used in for example â€˜mutedâ€™ text and help text.
 #####  [](./sass-api-reference/#govuk-secondary-text-colour-usage.md)Usage
 ! ** Warning
 Deprecated: Variables for applied colours are deprecated. Please use the `govuk-functional-colour` function instead: `govuk-functional-colour(secondary-text)`.
@@ -332,7 +332,7 @@ $govuk-secondary-text-colour: govuk-functional-colour(secondary-text);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L262-L262)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L262-L262)
 ####  [](./sass-api-reference/#govuk-focus-colour.md)$govuk-focus-colour
 Focus colour
 Used for outline (and background, where appropriate) when interactive elements (links, form controls) have keyboard focus.
@@ -347,7 +347,7 @@ $govuk-focus-colour: govuk-functional-colour(focus);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L275-L275)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L275-L275)
 ####  [](./sass-api-reference/#govuk-focus-text-colour.md)$govuk-focus-text-colour
 Focused text colour
 Ensure that the contrast between the text and background colour passes WCAG Level AA contrast requirements.
@@ -362,7 +362,7 @@ $govuk-focus-text-colour: govuk-functional-colour(focus-text);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L288-L288)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L288-L288)
 ####  [](./sass-api-reference/#govuk-error-colour.md)$govuk-error-colour
 Error colour
 Used to highlight error messages and form controls in an error state
@@ -377,7 +377,7 @@ $govuk-error-colour: govuk-functional-colour(error);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L300-L300)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L300-L300)
 ####  [](./sass-api-reference/#govuk-success-colour.md)$govuk-success-colour
 Success colour
 Used to highlight success messages and banners
@@ -392,7 +392,7 @@ $govuk-success-colour: govuk-functional-colour(success);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L312-L312)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L312-L312)
 ####  [](./sass-api-reference/#govuk-border-colour.md)$govuk-border-colour
 Border colour
 Used in for example borders, separators, rules and keylines.
@@ -407,7 +407,7 @@ $govuk-border-colour: govuk-functional-colour(border);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L324-L324)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L324-L324)
 ####  [](./sass-api-reference/#govuk-input-border-colour.md)$govuk-input-border-colour
 Input border colour
 Used for form inputs and controls
@@ -422,7 +422,7 @@ $govuk-input-border-colour: govuk-functional-colour(input-border);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L336-L336)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L336-L336)
 ####  [](./sass-api-reference/#govuk-hover-colour.md)$govuk-hover-colour
 Input hover colour
 Used for hover states on form controls
@@ -437,7 +437,7 @@ $govuk-hover-colour: govuk-functional-colour(hover);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L348-L348)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L348-L348)
 ####  [](./sass-api-reference/#govuk-link-colour.md)$govuk-link-colour
 Link colour
 #####  [](./sass-api-reference/#govuk-link-colour-usage.md)Usage
@@ -451,7 +451,7 @@ $govuk-link-colour: govuk-functional-colour(link);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L358-L358)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L358-L358)
 ####  [](./sass-api-reference/#govuk-link-visited-colour.md)$govuk-link-visited-colour
 Visited link colour
 #####  [](./sass-api-reference/#govuk-link-visited-colour-usage.md)Usage
@@ -465,7 +465,7 @@ $govuk-link-visited-colour: govuk-functional-colour(link-visited);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L368-L368)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L368-L368)
 ####  [](./sass-api-reference/#govuk-link-hover-colour.md)$govuk-link-hover-colour
 Link hover colour
 #####  [](./sass-api-reference/#govuk-link-hover-colour-usage.md)Usage
@@ -479,7 +479,7 @@ $govuk-link-hover-colour: govuk-functional-colour(link-hover);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L378-L378)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L378-L378)
 ####  [](./sass-api-reference/#govuk-link-active-colour.md)$govuk-link-active-colour
 Active link colour
 #####  [](./sass-api-reference/#govuk-link-active-colour-usage.md)Usage
@@ -493,7 +493,7 @@ $govuk-link-active-colour: govuk-functional-colour(link-active);
 
 ```
 
-[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L388-L388)
+[ View source code for _colours-functional.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-functional.scss#L388-L388)
 ####  [](./sass-api-reference/#govuk-colours-organisations.md)$govuk-colours-organisations
 Organisation colour palette
 #####  [](./sass-api-reference/#govuk-colours-organisations-default-value.md)Default value
@@ -597,7 +597,7 @@ $govuk-colours-organisations: (
 
 ```
 
-[ View source code for _colours-organisations.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_colours-organisations.scss#L22-L116)
+[ View source code for _colours-organisations.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_colours-organisations.scss#L22-L116)
 ###  [](./sass-api-reference/#custom-properties.md)Custom properties
 ####  [](./sass-api-reference/#govuk-output-custom-properties.md)$govuk-output-custom-properties
 Output CSS custom properties
@@ -610,10 +610,10 @@ $govuk-output-custom-properties: true;
 
 ```
 
-[ View source code for _custom-properties.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_custom-properties.scss#L16-L16)
+[ View source code for _custom-properties.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_custom-properties.scss#L16-L16)
 ###  [](./sass-api-reference/#global-styles.md)Global styles
 ####  [](./sass-api-reference/#govuk-global-styles.md)$govuk-global-styles
-Include ‘global’ styles
+Include â€˜globalâ€™ styles
 Whether to style paragraphs (`<p>`) and links (`<a>`) without explicitly having to apply the `govuk-body` and `govuk-link` classes.
 #####  [](./sass-api-reference/#govuk-global-styles-default-value.md)Default value
 
@@ -622,7 +622,7 @@ $govuk-global-styles: false;
 
 ```
 
-[ View source code for _global-styles.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_global-styles.scss#L13-L13)
+[ View source code for _global-styles.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_global-styles.scss#L13-L13)
 ###  [](./sass-api-reference/#layout.md)Layout
 ####  [](./sass-api-reference/#govuk-grid-widths.md)$govuk-grid-widths
 Map of grid column widths
@@ -640,7 +640,7 @@ $govuk-grid-widths: (
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L23-L30)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L23-L30)
 ####  [](./sass-api-reference/#govuk-gutter.md)$govuk-gutter
 Width of gutter between grid columns
 #####  [](./sass-api-reference/#govuk-gutter-default-value.md)Default value
@@ -650,7 +650,7 @@ $govuk-gutter: 30px;
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L37-L37)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L37-L37)
 ####  [](./sass-api-reference/#govuk-gutter-half.md)$govuk-gutter-half
 Width of half the gutter between grid columns
 #####  [](./sass-api-reference/#govuk-gutter-half-default-value.md)Default value
@@ -660,7 +660,7 @@ $govuk-gutter-half: math.div($govuk-gutter, 2);
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L44-L44)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L44-L44)
 ####  [](./sass-api-reference/#govuk-border-width.md)$govuk-border-width
 Standard border width
 #####  [](./sass-api-reference/#govuk-border-width-default-value.md)Default value
@@ -670,7 +670,7 @@ $govuk-border-width: 5px;
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L55-L55)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L55-L55)
 ####  [](./sass-api-reference/#govuk-border-width-wide.md)$govuk-border-width-wide
 Wide border width
 #####  [](./sass-api-reference/#govuk-border-width-wide-default-value.md)Default value
@@ -680,7 +680,7 @@ $govuk-border-width-wide: 10px;
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L62-L62)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L62-L62)
 ####  [](./sass-api-reference/#govuk-border-width-narrow.md)$govuk-border-width-narrow
 Narrow border width
 #####  [](./sass-api-reference/#govuk-border-width-narrow-default-value.md)Default value
@@ -690,7 +690,7 @@ $govuk-border-width-narrow: 4px;
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L69-L69)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L69-L69)
 ####  [](./sass-api-reference/#govuk-border-width-form-element.md)$govuk-border-width-form-element
 Form control border width
 #####  [](./sass-api-reference/#govuk-border-width-form-element-default-value.md)Default value
@@ -700,7 +700,7 @@ $govuk-border-width-form-element: 2px;
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L76-L76)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L76-L76)
 ####  [](./sass-api-reference/#govuk-border-width-form-group-error.md)$govuk-border-width-form-group-error
 Form group border width when in error state
 #####  [](./sass-api-reference/#govuk-border-width-form-group-error-default-value.md)Default value
@@ -710,7 +710,7 @@ $govuk-border-width-form-group-error: $govuk-border-width;
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L83-L83)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L83-L83)
 ####  [](./sass-api-reference/#govuk-focus-width.md)$govuk-focus-width
 Border width of focus outline
 #####  [](./sass-api-reference/#govuk-focus-width-default-value.md)Default value
@@ -720,7 +720,7 @@ $govuk-focus-width: 3px;
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L90-L90)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L90-L90)
 ####  [](./sass-api-reference/#govuk-hover-width.md)$govuk-hover-width
 Hover width for form controls with a hover state
 #####  [](./sass-api-reference/#govuk-hover-width-default-value.md)Default value
@@ -730,7 +730,7 @@ $govuk-hover-width: 10px;
 
 ```
 
-[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L97-L97)
+[ View source code for _measurements.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_measurements.scss#L97-L97)
 ####  [](./sass-api-reference/#govuk-breakpoints.md)$govuk-breakpoints
 Breakpoint definitions
 #####  [](./sass-api-reference/#govuk-breakpoints-default-value.md)Default value
@@ -744,13 +744,13 @@ $govuk-breakpoints: (
 
 ```
 
-[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_media-queries.scss#L10-L14)
+[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_media-queries.scss#L10-L14)
 ###  [](./sass-api-reference/#links.md)Links
 ####  [](./sass-api-reference/#govuk-link-underline-thickness.md)$govuk-link-underline-thickness
 Thickness of link underlines
 The default will be either:
   * 1px
-  * 0.0625rem, if it’s thicker than 1px because the user has changed the text size in their browser
+  * 0.0625rem, if itâ€™s thicker than 1px because the user has changed the text size in their browser
 
 Set this variable to `false` to avoid setting a thickness.
 #####  [](./sass-api-reference/#govuk-link-underline-thickness-default-value.md)Default value
@@ -760,10 +760,10 @@ $govuk-link-underline-thickness: string.unquote("max(1px, .0625rem)");
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_links.scss#L19-L19)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_links.scss#L19-L19)
 ####  [](./sass-api-reference/#govuk-link-underline-offset.md)$govuk-link-underline-offset
 Offset of link underlines from text baseline
-The default is 3px expressed as ems, as calculated against the default body font size (on desktop) of 19px. 3 ÷ 19 = 0.1578
+The default is 3px expressed as ems, as calculated against the default body font size (on desktop) of 19px. 3 Ã· 19 = 0.1578
 Set this variable to `false` to avoid setting an offset.
 #####  [](./sass-api-reference/#govuk-link-underline-offset-default-value.md)Default value
 
@@ -772,13 +772,13 @@ $govuk-link-underline-offset: 0.1578em;
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_links.scss#L32-L32)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_links.scss#L32-L32)
 ####  [](./sass-api-reference/#govuk-link-hover-underline-thickness.md)$govuk-link-hover-underline-thickness
 Thickness of link underlines in hover state
 The default for each link will be the thickest of the following:
   * 3px
-  * 0.1875rem, if it’s thicker than 3px because the user has changed the text size in their browser
-  * 0.12em (relative to the link’s text size)
+  * 0.1875rem, if itâ€™s thicker than 3px because the user has changed the text size in their browser
+  * 0.12em (relative to the linkâ€™s text size)
 
 Set this variable to `false` to avoid setting a thickness.
 #####  [](./sass-api-reference/#govuk-link-hover-underline-thickness-default-value.md)Default value
@@ -788,7 +788,7 @@ $govuk-link-hover-underline-thickness: string.unquote("max(3px, .1875rem, .12em)
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_links.scss#L48-L48)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_links.scss#L48-L48)
 ###  [](./sass-api-reference/#typography.md)Typography
 ####  [](./sass-api-reference/#govuk-font-family.md)$govuk-font-family
 Font families to use for all typography on screen media
@@ -799,7 +799,7 @@ $govuk-font-family: "GDS Transport", arial, sans-serif;
 
 ```
 
-[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L17-L17)
+[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L17-L17)
 ####  [](./sass-api-reference/#govuk-font-family-print.md)$govuk-font-family-print
 Font families to use for print media
 We recommend that you use system fonts when printing. This will avoid issues with some printer drivers and operating systems.
@@ -810,10 +810,10 @@ $govuk-font-family-print: sans-serif;
 
 ```
 
-[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L27-L27)
+[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L27-L27)
 ####  [](./sass-api-reference/#govuk-include-default-font-face.md)$govuk-include-default-font-face
 Include the default @font-face declarations
-Defaults to true if “GDS Transport” appears in the $govuk-font-family setting.
+Defaults to true if â€œGDS Transportâ€ appears in the $govuk-font-family setting.
 #####  [](./sass-api-reference/#govuk-include-default-font-face-default-value.md)Default value
 
 ```
@@ -821,7 +821,7 @@ $govuk-include-default-font-face: govuk-if(list.index($govuk-font-family, "GDS T
 
 ```
 
-[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L37-L37)
+[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L37-L37)
 ####  [](./sass-api-reference/#govuk-font-weight-regular.md)$govuk-font-weight-regular
 Font weight for regular typography
 #####  [](./sass-api-reference/#govuk-font-weight-regular-default-value.md)Default value
@@ -831,7 +831,7 @@ $govuk-font-weight-regular: 400;
 
 ```
 
-[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L47-L47)
+[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L47-L47)
 ####  [](./sass-api-reference/#govuk-font-weight-bold.md)$govuk-font-weight-bold
 Font weight for bold typography
 #####  [](./sass-api-reference/#govuk-font-weight-bold-default-value.md)Default value
@@ -841,7 +841,7 @@ $govuk-font-weight-bold: 700;
 
 ```
 
-[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L53-L53)
+[ View source code for _typography-font.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_typography-font.scss#L53-L53)
 ####  [](./sass-api-reference/#govuk-root-font-size.md)$govuk-root-font-size
 Root font size
 This is used to calculate rem sizes for the typography, and should match the _effective_ font-size of your root (or html) element.
@@ -853,11 +853,11 @@ $govuk-root-font-size: 16px;
 
 ```
 
-[ View source code for _typography-responsive.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_typography-responsive.scss#L17-L17)
+[ View source code for _typography-responsive.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_typography-responsive.scss#L17-L17)
 ####  [](./sass-api-reference/#govuk-typography-scale.md)$govuk-typography-scale
 Responsive typography font map
 This is used to generate responsive typography that adapts according to the breakpoints.
-Font size and font weight can be defined for each breakpoint. You can define different behaviour on tablet and desktop. The ‘null’ breakpoint is for mobile.
+Font size and font weight can be defined for each breakpoint. You can define different behaviour on tablet and desktop. The â€˜nullâ€™ breakpoint is for mobile.
 Line-heights will automatically be converted from pixel measurements into relative values. For example, with a font-size of 16px and a line-height of 24px, the line-height will be converted to 1.5 before output.
 You can also specify a separate font size and line height for print media.
 #####  [](./sass-api-reference/#govuk-typography-scale-default-value.md)Default value
@@ -962,7 +962,7 @@ $govuk-typography-scale: (
 
 ```
 
-[ View source code for _typography-responsive.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_typography-responsive.scss#L43-L138)
+[ View source code for _typography-responsive.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_typography-responsive.scss#L43-L138)
 ###  [](./sass-api-reference/#warnings.md)Warnings
 ####  [](./sass-api-reference/#govuk-suppressed-warnings.md)$govuk-suppressed-warnings
 Suppressed warnings map
@@ -987,7 +987,7 @@ $govuk-suppressed-warnings: (
 
 ```
 
-[ View source code for _warnings.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/settings/_warnings.scss#L28-L28)
+[ View source code for _warnings.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/settings/_warnings.scss#L28-L28)
 ##  [](./sass-api-reference/#tools.md)Tools
 ###  [](./sass-api-reference/#general-tools.md)General tools
 ####  [](./sass-api-reference/#govuk-exports.md)govuk-exports
@@ -996,7 +996,7 @@ Ensure that the modules of CSS that we define throughout Frontend are only inclu
 #####  [](./sass-api-reference/#parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$name`  | Name of module - must be unique within the codebase  | `String`  | —  |  
+|  `$name`  | Name of module - must be unique within the codebase  | `String`  | â€”  |  
 #####  [](./sass-api-reference/#govuk-exports-usage.md)Usage
 
 ```
@@ -1006,7 +1006,7 @@ Ensure that the modules of CSS that we define throughout Frontend are only inclu
 
 ```
 
-[ View source code for _exports.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/tools/_exports.scss#L24-L34)
+[ View source code for _exports.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/tools/_exports.scss#L24-L34)
 ###  [](./sass-api-reference/#tools-assets.md)Assets
 ####  [](./sass-api-reference/#govuk-font-url.md)govuk-font-url
 Font URL
@@ -1014,16 +1014,16 @@ If a custom font-url handler is defined ($govuk-font-url-function) then it will 
 #####  [](./sass-api-reference/#govuk-font-url-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$filename`  | Font filename  | `String`  | —  |  
-[ View source code for _font-url.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/tools/_font-url.scss#L16-L34)
+|  `$filename`  | Font filename  | `String`  | â€”  |  
+[ View source code for _font-url.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/tools/_font-url.scss#L16-L34)
 ####  [](./sass-api-reference/#govuk-image-url.md)govuk-image-url
 Image URL
 If a custom image-url handler is defined ($govuk-image-url-function) then it will be called, otherwise a url will be returned with the filename appended to the image path.
 #####  [](./sass-api-reference/#govuk-image-url-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$Filename`  | for the image to load  | `String`  | —  |  
-[ View source code for _image-url.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/tools/_image-url.scss#L16-L34)
+|  `$Filename`  | for the image to load  | `String`  | â€”  |  
+[ View source code for _image-url.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/tools/_image-url.scss#L16-L34)
 ###  [](./sass-api-reference/#if.md)If
 ####  [](./sass-api-reference/#govuk-if.md)govuk-if
 Inline `if` function
@@ -1031,27 +1031,27 @@ Replicates the syntax of the original Sass `if` function to support Sass `>=1.79
 #####  [](./sass-api-reference/#govuk-if-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$condition`  | The condition  | `Boolean`  | —  |  
-|  `$if-true`  | The value if the condition is met  | `any`  | —  |  
+|  `$condition`  | The condition  | `Boolean`  | â€”  |  
+|  `$if-true`  | The value if the condition is met  | `any`  | â€”  |  
 |  `$if-false`  | The value if the condition is not met, defaults to `null`.  | `any`  | `null`  |  
-[ View source code for _if.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/tools/_if.scss#L16-L22)
+[ View source code for _if.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/tools/_if.scss#L16-L22)
 ###  [](./sass-api-reference/#unit-conversion.md)Unit conversion
 ####  [](./sass-api-reference/#govuk-em.md)govuk-em
 Convert pixels to em
 #####  [](./sass-api-reference/#govuk-em-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$value`  | Length in pixels  | `Number`  | —  |  
+|  `$value`  | Length in pixels  | `Number`  | â€”  |  
 |  `$context-font-size`  | Font size of element  | `Number`  | `$govuk-root-font-size`  |  
-[ View source code for _px-to-em.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/tools/_px-to-em.scss#L16-L24)
+[ View source code for _px-to-em.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/tools/_px-to-em.scss#L16-L24)
 ####  [](./sass-api-reference/#govuk-px-to-rem.md)govuk-px-to-rem
 Convert pixels to rem
 The $govuk-root-font-size (defined in settings/_typography-responsive.scss) must be configured to match the font-size of your root (html) element
 #####  [](./sass-api-reference/#govuk-px-to-rem-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$value`  | Length in pixels  | `Number`  | —  |  
-[ View source code for _px-to-rem.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/tools/_px-to-rem.scss#L18-L24)
+|  `$value`  | Length in pixels  | `Number`  | â€”  |  
+[ View source code for _px-to-rem.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/tools/_px-to-rem.scss#L18-L24)
 ##  [](./sass-api-reference/#helpers.md)Helpers
 ###  [](./sass-api-reference/#accessibility.md)Accessibility
 ####  [](./sass-api-reference/#govuk-focused-text.md)govuk-focused-text
@@ -1073,7 +1073,7 @@ Provides an outline to clearly indicate when the target element is focused. Used
 
 ```
 
-[ View source code for _focused.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_focused.scss#L17-L46)
+[ View source code for _focused.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_focused.scss#L17-L46)
 ####  [](./sass-api-reference/#govuk-focused-box.md)govuk-focused-box
 Focused box
 Provides an outline to clearly indicate when the target element is focused. Unlike govuk-focused-text, which only draws an underline below the element, govuk-focused-box draws an outline around all sides of the element. Best used for non-text content contained within links.
@@ -1093,7 +1093,7 @@ Provides an outline to clearly indicate when the target element is focused. Unli
 
 ```
 
-[ View source code for _focused.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_focused.scss#L62-L67)
+[ View source code for _focused.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_focused.scss#L62-L67)
 ####  [](./sass-api-reference/#govuk-focused-form-input.md)govuk-focused-form-input
 Focused form input
 Provides an outline to clearly indicate when the target element is focused. Used for form inputs.
@@ -1113,7 +1113,7 @@ Provides an outline to clearly indicate when the target element is focused. Used
 
 ```
 
-[ View source code for _focused.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_focused.scss#L81-L92)
+[ View source code for _focused.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_focused.scss#L81-L92)
 ####  [](./sass-api-reference/#govuk-visually-hidden.md)govuk-visually-hidden
 Hide an element visually, but have it available for screen readers
 #####  [](./sass-api-reference/#govuk-visually-hidden-parameters.md)Parameters  
@@ -1127,7 +1127,7 @@ Hide an element visually, but have it available for screen readers
 
 ```
 
-[ View source code for _visually-hidden.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_visually-hidden.scss#L56-L70)
+[ View source code for _visually-hidden.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_visually-hidden.scss#L56-L70)
 ####  [](./sass-api-reference/#govuk-visually-hidden-focusable.md)govuk-visually-hidden-focusable
 Hide an element visually, but have it available for screen readers whilst allowing the element to be focused when navigated to via the keyboard (e.g. for the skip link)
 #####  [](./sass-api-reference/#govuk-visually-hidden-focusable-parameters.md)Parameters  
@@ -1141,7 +1141,7 @@ Hide an element visually, but have it available for screen readers whilst allowi
 
 ```
 
-[ View source code for _visually-hidden.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_visually-hidden.scss#L80-L88)
+[ View source code for _visually-hidden.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_visually-hidden.scss#L80-L88)
 ###  [](./sass-api-reference/#colour.md)Colour
 ####  [](./sass-api-reference/#govuk-colour.md)govuk-colour
 Get a colour from the palette
@@ -1149,8 +1149,8 @@ Before using this function, check if your use case is covered by a functional co
 #####  [](./sass-api-reference/#govuk-colour-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$colour`  | Name of colour from the colour palette (`$_govuk-palette`)  |  `String` or `Colour`  | —  |  
-|  `$variant`  | Name of the variant from the colour palette (`$_govuk-palette`)  |  `String` or `Colour`  | —  |  
+|  `$colour`  | Name of colour from the colour palette (`$_govuk-palette`)  |  `String` or `Colour`  | â€”  |  
+|  `$variant`  | Name of the variant from the colour palette (`$_govuk-palette`)  |  `String` or `Colour`  | â€”  |  
 #####  [](./sass-api-reference/#example-getting-the-primary-variant-of-a-colour.md)Example: Getting the primary variant of a colour
 
 ```
@@ -1169,7 +1169,7 @@ Before using this function, check if your use case is covered by a functional co
 
 ```
 
-[ View source code for _colour.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_colour.scss#L41-L80)
+[ View source code for _colour.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_colour.scss#L41-L80)
 ####  [](./sass-api-reference/#govuk-functional-colour.md)govuk-functional-colour
 Get a functional colour
 #####  [](./sass-api-reference/#govuk-functional-colour-parameters.md)Parameters  
@@ -1195,15 +1195,15 @@ Get a functional colour
 
 ```
 
-[ View source code for _colour.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_colour.scss#L126-L141)
+[ View source code for _colour.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_colour.scss#L126-L141)
 ####  [](./sass-api-reference/#govuk-organisation-colour.md)govuk-organisation-colour
 Get the colour for a government organisation
 #####  [](./sass-api-reference/#govuk-organisation-colour-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$organisation`  | Organisation name, lowercase, hyphenated  | `String`  | —  |  
+|  `$organisation`  | Organisation name, lowercase, hyphenated  | `String`  | â€”  |  
 |  `$contrast-safe`  | By default a version of the colour will be returned which has a minimum 4.5:1 contrast ratio when used with white, as per the WCAG 2.1 Level AA guidelines. If you want to use the non-contrast safe version you can set this to `false` but your should ensure that you still meets contrast requirements for accessibility - for example, do not use the non-contrast safe version for text.  | `Boolean`  | `true`  |  
-[ View source code for _colour.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_colour.scss#L191-L219)
+[ View source code for _colour.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_colour.scss#L191-L219)
 ###  [](./sass-api-reference/#helpers-layout.md)Layout
 ####  [](./sass-api-reference/#govuk-clearfix.md)govuk-clearfix
 Clear floated content within a container using a pseudo element
@@ -1214,19 +1214,19 @@ Clear floated content within a container using a pseudo element
 
 ```
 
-[ View source code for _clearfix.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_clearfix.scss#L9-L15)
+[ View source code for _clearfix.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_clearfix.scss#L9-L15)
 ####  [](./sass-api-reference/#govuk-grid-width.md)govuk-grid-width
 Grid width percentage
 #####  [](./sass-api-reference/#govuk-grid-width-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$key`  | Name of grid width (e.g. two-thirds)  | `String`  | —  |  
-[ View source code for _grid.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_grid.scss#L13-L19)
+|  `$key`  | Name of grid width (e.g. two-thirds)  | `String`  | â€”  |  
+[ View source code for _grid.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_grid.scss#L13-L19)
 ####  [](./sass-api-reference/#govuk-grid-column.md)govuk-grid-column
 Generate grid column styles
 Creates a grid column with standard gutter between the columns.
 Grid widths are defined in the `$govuk-grid-widths` map.
-By default the column width changes from 100% to specified width at the ‘tablet’ breakpoint, but other breakpoints can be specified using the `$at` parameter.
+By default the column width changes from 100% to specified width at the â€˜tabletâ€™ breakpoint, but other breakpoints can be specified using the `$at` parameter.
 #####  [](./sass-api-reference/#govuk-grid-column-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
@@ -1267,13 +1267,13 @@ By default the column width changes from 100% to specified width at the ‘table
 
 ```
 
-[ View source code for _grid.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_grid.scss#L52-L62)
+[ View source code for _grid.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_grid.scss#L52-L62)
 ####  [](./sass-api-reference/#govuk-breakpoint-value.md)govuk-breakpoint-value
 Get the value of a breakpoint by name.
 #####  [](./sass-api-reference/#govuk-breakpoint-value-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$value`  | If a string, the name of a breakpoint in $breakpoints. If a number without units, it will convert to px. If a number with units, it will return the value unaltered.  |  `String` or `Number`  | —  |  
+|  `$value`  | If a string, the name of a breakpoint in $breakpoints. If a number without units, it will convert to px. If a number with units, it will return the value unaltered.  |  `String` or `Number`  | â€”  |  
 |  `$breakpoints`  | The map to look for $value.  | `Map`  | `$govuk-breakpoints`  |  
 #####  [](./sass-api-reference/#govuk-breakpoint-value-example.md)Example
 
@@ -1299,14 +1299,14 @@ Get the value of a breakpoint by name.
 
 ```
 
-[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_media-queries.scss#L46-L65)
+[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_media-queries.scss#L46-L65)
 ####  [](./sass-api-reference/#govuk-from-breakpoint.md)govuk-from-breakpoint
 Generate the `min-width` segment of a media query given a breakpoint key
 Pixel values are converted to ems for backwards compatibility with sass-mq. Unlike sass-mq, non-px and em values can be used as well.
 #####  [](./sass-api-reference/#govuk-from-breakpoint-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$from`  | If a string, expects the name of a breakpoint in $breakpoints. If a number, it will use that number.  |  `String` or `Number`  | —  |  
+|  `$from`  | If a string, expects the name of a breakpoint in $breakpoints. If a number, it will use that number.  |  `String` or `Number`  | â€”  |  
 |  `$breakpoints`  | The map to look for $from.  | `Map`  | `$govuk-breakpoints`  |  
 #####  [](./sass-api-reference/#govuk-from-breakpoint-example.md)Example
 
@@ -1334,14 +1334,14 @@ Pixel values are converted to ems for backwards compatibility with sass-mq. Unli
 
 ```
 
-[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_media-queries.scss#L101-L109)
+[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_media-queries.scss#L101-L109)
 ####  [](./sass-api-reference/#govuk-until-breakpoint.md)govuk-until-breakpoint
 Generate the `max-width` segment of a media query given a breakpoint key
 sass-mq converted pixel values to ems, and only performed subtractions on named breakpoints. These have been retained for backwards compatibility, though unlike sass-mq, this also supports using non-px and em values.
 #####  [](./sass-api-reference/#govuk-until-breakpoint-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$until`  | If a string, expects the name of a breakpoint in $breakpoints. If a number, it will use that number.  |  `String` or `Number`  | —  |  
+|  `$until`  | If a string, expects the name of a breakpoint in $breakpoints. If a number, it will use that number.  |  `String` or `Number`  | â€”  |  
 |  `$breakpoints`  | The map to look for $until.  | `Map`  | `$govuk-breakpoints`  |  
 #####  [](./sass-api-reference/#govuk-until-breakpoint-example.md)Example
 
@@ -1369,7 +1369,7 @@ sass-mq converted pixel values to ems, and only performed subtractions on named 
 
 ```
 
-[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_media-queries.scss#L146-L160)
+[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_media-queries.scss#L146-L160)
 ####  [](./sass-api-reference/#govuk-media-query.md)govuk-media-query
 Media query
 #####  [](./sass-api-reference/#govuk-media-query-parameters.md)Parameters  
@@ -1378,7 +1378,7 @@ Media query
 |  `$from`  | One of $breakpoints  |  `String` or `Boolean`  | `false`  |  
 |  `$until`  | One of $breakpoints  |  `String` or `Boolean`  | `false`  |  
 |  `$and`  | Additional media query parameters  |  `String` or `Boolean`  | `false`  |  
-|  `$media-type`  | Override media type: screen, print…  | `String`  | `all`  |  
+|  `$media-type`  | Override media type: screen, printâ€¦  | `String`  | `all`  |  
 |  `$breakpoints`  | Map of breakpoints to use  | `Map`  | `$govuk-breakpoints`  |  
 #####  [](./sass-api-reference/#govuk-media-query-usage.md)Usage
 
@@ -1415,7 +1415,7 @@ Media query
 
 ```
 
-[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_media-queries.scss#L196-L221)
+[ View source code for _media-queries.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_media-queries.scss#L196-L221)
 ###  [](./sass-api-reference/#helpers-links.md)Links
 ####  [](./sass-api-reference/#govuk-link-common.md)govuk-link-common
 Common link styles
@@ -1427,7 +1427,7 @@ Provides the typography and focus state, regardless of link style.
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L11-L22)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L11-L22)
 ####  [](./sass-api-reference/#govuk-link-decoration.md)govuk-link-decoration
 Link decoration
 Provides the text decoration for links, including thickness and underline offset. Use this mixin only if you cannot use the `govuk-link-common` mixin.
@@ -1438,7 +1438,7 @@ Provides the text decoration for links, including thickness and underline offset
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L30-L40)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L30-L40)
 ####  [](./sass-api-reference/#govuk-link-hover-decoration.md)govuk-link-hover-decoration
 Link hover decoration
 Provides the text decoration for links in their hover state, for you to use within a `:hover` pseudo-selector. Use this mixin only if you cannot use the `govuk-link-common` mixin.
@@ -1449,7 +1449,7 @@ Provides the text decoration for links in their hover state, for you to use with
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L50-L60)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L50-L60)
 ####  [](./sass-api-reference/#govuk-link-style-default.md)govuk-link-style-default
 Default link styles
 Makes links use the default unvisited, visited, hover and active colours.
@@ -1471,10 +1471,10 @@ If you use this mixin in a component, you must also include the `govuk-link-comm
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L77-L99)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L77-L99)
 ####  [](./sass-api-reference/#govuk-link-style-error.md)govuk-link-style-error
 Error link styles
-Makes links use the error colour. The link will darken if it’s active or a user hovers their cursor over it.
+Makes links use the error colour. The link will darken if itâ€™s active or a user hovers their cursor over it.
 If you use this mixin in a component, you must also include the `govuk-link-common` mixin to get the correct focus and hover states.
 #####  [](./sass-api-reference/#govuk-link-style-error-usage.md)Usage
 
@@ -1493,10 +1493,10 @@ If you use this mixin in a component, you must also include the `govuk-link-comm
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L117-L136)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L117-L136)
 ####  [](./sass-api-reference/#govuk-link-style-success.md)govuk-link-style-success
 Success link styles
-Makes links use the success colour. The link will darken if it’s active or a user hovers their cursor over it.
+Makes links use the success colour. The link will darken if itâ€™s active or a user hovers their cursor over it.
 If you use this mixin in a component, you must also include the `govuk-link-common` mixin to get the correct focus and hover states.
 #####  [](./sass-api-reference/#govuk-link-style-success-usage.md)Usage
 
@@ -1515,10 +1515,10 @@ If you use this mixin in a component, you must also include the `govuk-link-comm
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L154-L173)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L154-L173)
 ####  [](./sass-api-reference/#govuk-link-style-muted.md)govuk-link-style-muted
 Muted link styles
-Makes links use the secondary text colour. The link will darken if it’s active or a user hovers their cursor over it.
+Makes links use the secondary text colour. The link will darken if itâ€™s active or a user hovers their cursor over it.
 If you use this mixin in a component, you must also include the `govuk-link-common` mixin to get the correct focus and hover states.
 #####  [](./sass-api-reference/#govuk-link-style-muted-usage.md)Usage
 
@@ -1537,7 +1537,7 @@ If you use this mixin in a component, you must also include the `govuk-link-comm
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L191-L207)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L191-L207)
 ####  [](./sass-api-reference/#govuk-link-style-text.md)govuk-link-style-text
 Text link styles
 Makes links use the primary text colour, in all states. Use this mixin for navigation components, such as breadcrumbs or the back link.
@@ -1559,10 +1559,10 @@ If you use this mixin in a component, you must also include the `govuk-link-comm
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L225-L235)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L225-L235)
 ####  [](./sass-api-reference/#govuk-link-style-inverse.md)govuk-link-style-inverse
 Inverse link styles
-Makes links white, in all states. Use this mixin if you’re displaying links against a dark background.
+Makes links white, in all states. Use this mixin if youâ€™re displaying links against a dark background.
 If you use this mixin in a component, you must also include the `govuk-link-common` mixin to get the correct focus and hover states.
 #####  [](./sass-api-reference/#govuk-link-style-inverse-usage.md)Usage
 
@@ -1581,11 +1581,11 @@ If you use this mixin in a component, you must also include the `govuk-link-comm
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L253-L262)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L253-L262)
 ####  [](./sass-api-reference/#govuk-link-style-no-visited-state.md)govuk-link-style-no-visited-state
 Default link styles, without a visited state
 Makes links use the default unvisited, hover and active colours, with no distinct visited state.
-Use this mixin when it’s not helpful to distinguish between visited and non-visited links. For example, when you link to pages with frequently-changing content, such as the dashboard for an admin interface.
+Use this mixin when itâ€™s not helpful to distinguish between visited and non-visited links. For example, when you link to pages with frequently-changing content, such as the dashboard for an admin interface.
 If you use this mixin in a component, you must also include the `govuk-link-common` mixin to get the correct focus and hover states.
 #####  [](./sass-api-reference/#govuk-link-style-no-visited-state-usage.md)Usage
 
@@ -1604,7 +1604,7 @@ If you use this mixin in a component, you must also include the `govuk-link-comm
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L284-L306)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L284-L306)
 ####  [](./sass-api-reference/#govuk-link-style-no-underline.md)govuk-link-style-no-underline
 Remove underline from links
 Remove underlines from links unless the link is active or a user hovers their cursor over it.
@@ -1626,7 +1626,7 @@ Remove underlines from links unless the link is active or a user hovers their cu
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L322-L326)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L322-L326)
 ####  [](./sass-api-reference/#govuk-link-print-friendly.md)govuk-link-print-friendly
 Include link destination when printing the page
 If the user prints the page, add the destination URL after the link text, if the URL starts with `/`, `http://` or `https://`.
@@ -1637,7 +1637,7 @@ If the user prints the page, add the destination URL after the link text, if the
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L335-L351)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L335-L351)
 ####  [](./sass-api-reference/#govuk-link-image.md)govuk-link-image
 Image link styles
 Prepares and provides the focus state for links that only contain images with no accompanying text.
@@ -1648,7 +1648,7 @@ Prepares and provides the focus state for links that only contain images with no
 
 ```
 
-[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L360-L373)
+[ View source code for _links.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_links.scss#L360-L373)
 ###  [](./sass-api-reference/#shapes.md)Shapes
 ####  [](./sass-api-reference/#govuk-shape-arrow.md)govuk-shape-arrow
 Arrow mixin
@@ -1658,8 +1658,8 @@ We need both because older browsers do not support clip-path.
 #####  [](./sass-api-reference/#govuk-shape-arrow-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$direction`  | Direction for arrow: up, right, down, left.  | `String`  | —  |  
-|  `$base`  | Length of the triangle ‘base’ side  | `Number`  | —  |  
+|  `$direction`  | Direction for arrow: up, right, down, left.  | `String`  | â€”  |  
+|  `$base`  | Length of the triangle â€˜baseâ€™ side  | `Number`  | â€”  |  
 |  `$height`  | Height of triangle. Omit for equilateral.  | `Number`  | `null`  |  
 |  `$display`  | CSS display property of the arrow  | `String`  | `block`  |  
 #####  [](./sass-api-reference/#govuk-shape-arrow-usage.md)Usage
@@ -1669,7 +1669,7 @@ We need both because older browsers do not support clip-path.
 
 ```
 
-[ View source code for _shape-arrow.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_shape-arrow.scss#L38-L80)
+[ View source code for _shape-arrow.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_shape-arrow.scss#L38-L80)
 ###  [](./sass-api-reference/#spacing.md)Spacing
 ####  [](./sass-api-reference/#govuk-spacing.md)govuk-spacing
 Single point spacing
@@ -1677,7 +1677,7 @@ Returns measurement corresponding to the spacing point requested.
 #####  [](./sass-api-reference/#govuk-spacing-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$spacing-point`  | Point on the spacing scale (set in `settings/_spacing.scss`)  | `Number`  | —  |  
+|  `$spacing-point`  | Point on the spacing scale (set in `settings/_spacing.scss`)  | `Number`  | â€”  |  
 #####  [](./sass-api-reference/#govuk-spacing-example.md)Example
 
 ```
@@ -1705,14 +1705,14 @@ Returns measurement corresponding to the spacing point requested.
 
 ```
 
-[ View source code for _spacing.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_spacing.scss#L37-L56)
+[ View source code for _spacing.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_spacing.scss#L37-L56)
 ####  [](./sass-api-reference/#govuk-responsive-margin.md)govuk-responsive-margin
 Responsive margin
-Adds responsive margin by fetching a ‘spacing map’ from the responsive spacing scale, which defines different spacing values at different breakpoints. Wrapper for the `_govuk-responsive-spacing` mixin.
+Adds responsive margin by fetching a â€˜spacing mapâ€™ from the responsive spacing scale, which defines different spacing values at different breakpoints. Wrapper for the `_govuk-responsive-spacing` mixin.
 #####  [](./sass-api-reference/#govuk-responsive-margin-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$responsive-spacing-point`  | Point on the responsive spacingscale, corresponds to a map of breakpoints and spacing values  | `Number`  | —  |  
+|  `$responsive-spacing-point`  | Point on the responsive spacingscale, corresponds to a map of breakpoints and spacing values  | `Number`  | â€”  |  
 |  `$direction`  | Direction to add spacing to (`top`, `right`, `bottom`, `left`, `all`)  | `String`  | `all`  |  
 |  `$important`  | Whether to mark as `!important`  | `Boolean`  | `false`  |  
 |  `$adjustment`  | Offset to adjust spacing by  | `Number`  | `false`  |  
@@ -1732,14 +1732,14 @@ Adds responsive margin by fetching a ‘spacing map’ from the responsive spaci
 
 ```
 
-[ View source code for _spacing.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_spacing.scss#L149-L151)
+[ View source code for _spacing.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_spacing.scss#L149-L151)
 ####  [](./sass-api-reference/#govuk-responsive-padding.md)govuk-responsive-padding
 Responsive padding
-Adds responsive padding by fetching a ‘spacing map’ from the responsive spacing scale, which defines different spacing values at different breakpoints. Wrapper for the `_govuk-responsive-spacing` mixin.
+Adds responsive padding by fetching a â€˜spacing mapâ€™ from the responsive spacing scale, which defines different spacing values at different breakpoints. Wrapper for the `_govuk-responsive-spacing` mixin.
 #####  [](./sass-api-reference/#govuk-responsive-padding-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$responsive-spacing-point`  | Point on the responsive spacing scale, corresponds to a map of breakpoints and spacing values  | `Number`  | —  |  
+|  `$responsive-spacing-point`  | Point on the responsive spacing scale, corresponds to a map of breakpoints and spacing values  | `Number`  | â€”  |  
 |  `$direction`  | Direction to add spacing to (`top`, `right`, `bottom`, `left`, `all`)  | `String`  | `all`  |  
 |  `$important`  | Whether to mark as `!important`  | `Boolean`  | `false`  |  
 |  `$adjustment`  | Offset to adjust spacing  | `Number`  | `false`  |  
@@ -1759,10 +1759,10 @@ Adds responsive padding by fetching a ‘spacing map’ from the responsive spac
 
 ```
 
-[ View source code for _spacing.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_spacing.scss#L175-L177)
+[ View source code for _spacing.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_spacing.scss#L175-L177)
 ###  [](./sass-api-reference/#helpers-typography.md)Typography
 ####  [](./sass-api-reference/#govuk-typography-common.md)govuk-typography-common
-‘Common typography’ helper
+â€˜Common typographyâ€™ helper
 Sets the font family and associated properties, such as font smoothing. Also overrides the font for print.
 #####  [](./sass-api-reference/#govuk-typography-common-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
@@ -1775,7 +1775,7 @@ Sets the font family and associated properties, such as font smoothing. Also ove
 
 ```
 
-[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L28-L42)
+[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L28-L42)
 ####  [](./sass-api-reference/#helpers-typography-govuk-text-colour.md)govuk-text-colour
 Text colour helper
 Sets the text colour, including a suitable override for print.
@@ -1789,7 +1789,7 @@ Deprecated:
 
 ```
 
-[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L51-L58)
+[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L51-L58)
 ####  [](./sass-api-reference/#govuk-typography-weight-regular.md)govuk-typography-weight-regular
 Regular font weight helper
 #####  [](./sass-api-reference/#govuk-typography-weight-regular-parameters.md)Parameters  
@@ -1803,7 +1803,7 @@ Regular font weight helper
 
 ```
 
-[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L66-L68)
+[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L66-L68)
 ####  [](./sass-api-reference/#govuk-typography-weight-bold.md)govuk-typography-weight-bold
 Bold font weight helper
 #####  [](./sass-api-reference/#govuk-typography-weight-bold-parameters.md)Parameters  
@@ -1817,10 +1817,10 @@ Bold font weight helper
 
 ```
 
-[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L76-L78)
+[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L76-L78)
 ####  [](./sass-api-reference/#govuk-font-tabular-numbers.md)govuk-font-tabular-numbers
 Tabular number helper
-Switches numerical glyphs (0–9) to use alternative forms with a monospaced bounding box. This ensures that columns of numbers, such as those in tables, remain horizontally aligned with one another. This also has the useful side effect of making numbers more legible in some situations, such as reference codes, as the numbers are more distinct and visually separated from one another.
+Switches numerical glyphs (0â€“9) to use alternative forms with a monospaced bounding box. This ensures that columns of numbers, such as those in tables, remain horizontally aligned with one another. This also has the useful side effect of making numbers more legible in some situations, such as reference codes, as the numbers are more distinct and visually separated from one another.
 #####  [](./sass-api-reference/#govuk-font-tabular-numbers-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
@@ -1832,10 +1832,10 @@ Switches numerical glyphs (0–9) to use alternative forms with a monospaced bou
 
 ```
 
-[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L93-L95)
+[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L93-L95)
 ####  [](./sass-api-reference/#govuk-text-break-word.md)govuk-text-break-word
 Word break helper
-Forcibly breaks long words that lack spaces, such as email addresses, across multiple lines when they wouldn’t otherwise fit.
+Forcibly breaks long words that lack spaces, such as email addresses, across multiple lines when they wouldnâ€™t otherwise fit.
 #####  [](./sass-api-reference/#govuk-text-break-word-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
@@ -1847,10 +1847,10 @@ Forcibly breaks long words that lack spaces, such as email addresses, across mul
 
 ```
 
-[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L106-L112)
+[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L106-L112)
 ####  [](./sass-api-reference/#govuk-font-size.md)govuk-font-size
 Font size and line height helper
-Takes a point from the responsive ‘font map’ as an argument (the size as it would appear on tablet and above), and uses it to create font-size and line-height declarations for different breakpoints, and print.
+Takes a point from the responsive â€˜font mapâ€™ as an argument (the size as it would appear on tablet and above), and uses it to create font-size and line-height declarations for different breakpoints, and print.
 Example font map:
 
 ```
@@ -1874,7 +1874,7 @@ Example font map:
 #####  [](./sass-api-reference/#govuk-font-size-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$size`  | Point from the type scale (the size as it would appear on tablet and above)  |  `Number` or `String`  | —  |  
+|  `$size`  | Point from the type scale (the size as it would appear on tablet and above)  |  `Number` or `String`  | â€”  |  
 |  `$line-height`  | Non responsive custom line height. Omit to use the line height from the font map.  | `Number`  | `false`  |  
 |  `$important`  | Whether to mark declarations as `!important`.  | `Boolean`  | `false`  |  
 #####  [](./sass-api-reference/#govuk-font-size-usage.md)Usage
@@ -1884,13 +1884,13 @@ Example font map:
 
 ```
 
-[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L168-L252)
+[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L168-L252)
 ####  [](./sass-api-reference/#govuk-font.md)govuk-font
 Font helper
 #####  [](./sass-api-reference/#govuk-font-parameters.md)Parameters  
 | Name  | Description  | Type  | Default value  |  
 | --- | --- | --- | --- |  
-|  `$size`  | Point from the type scale (the size as it would appear on tablet and above). Use `false` to avoid setting a size.  |  `Number` or `Boolean` or `String`  | —  |  
+|  `$size`  | Point from the type scale (the size as it would appear on tablet and above). Use `false` to avoid setting a size.  |  `Number` or `Boolean` or `String`  | â€”  |  
 |  `$weight`  | Weight: `bold` or `regular`  | `String`  | `regular`  |  
 |  `$tabular`  | Whether to use tabular numbers or not  | `Boolean`  | `false`  |  
 |  `$line-height`  | Line-height, if overriding the default  | `Number`  | `false`  |  
@@ -1901,7 +1901,7 @@ Font helper
 
 ```
 
-[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L268-L284)
+[ View source code for _typography.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/helpers/_typography.scss#L268-L284)
 ##  [](./sass-api-reference/#components.md)Components
 ###  [](./sass-api-reference/#button.md)Button
 ####  [](./sass-api-reference/#govuk-button-background-colour.md)$govuk-button-background-colour
@@ -1913,7 +1913,7 @@ $govuk-button-background-colour: govuk-colour("green");
 
 ```
 
-[ View source code for _index.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/components/button/_index.scss#L12-L12)
+[ View source code for _index.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/components/button/_index.scss#L12-L12)
 ####  [](./sass-api-reference/#govuk-button-text-colour.md)$govuk-button-text-colour
 Button component text colour
 #####  [](./sass-api-reference/#govuk-button-text-colour-default-value.md)Default value
@@ -1923,7 +1923,7 @@ $govuk-button-text-colour: govuk-colour("white");
 
 ```
 
-[ View source code for _index.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/components/button/_index.scss#L19-L19)
+[ View source code for _index.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/components/button/_index.scss#L19-L19)
 ####  [](./sass-api-reference/#govuk-inverse-button-background-colour.md)$govuk-inverse-button-background-colour
 Inverted button component background colour
 #####  [](./sass-api-reference/#govuk-inverse-button-background-colour-default-value.md)Default value
@@ -1933,7 +1933,7 @@ $govuk-inverse-button-background-colour: govuk-colour("white");
 
 ```
 
-[ View source code for _index.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/components/button/_index.scss#L26-L26)
+[ View source code for _index.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/components/button/_index.scss#L26-L26)
 ####  [](./sass-api-reference/#govuk-inverse-button-text-colour.md)$govuk-inverse-button-text-colour
 Inverted button component text colour
 #####  [](./sass-api-reference/#govuk-inverse-button-text-colour-default-value.md)Default value
@@ -1943,7 +1943,7 @@ $govuk-inverse-button-text-colour: govuk-functional-colour(brand);
 
 ```
 
-[ View source code for _index.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/components/button/_index.scss#L33-L33)
+[ View source code for _index.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/components/button/_index.scss#L33-L33)
 ##  [](./sass-api-reference/#objects.md)Objects
 ###  [](./sass-api-reference/#objects-layout.md)Layout
 ####  [](./sass-api-reference/#govuk-width-container.md)govuk-width-container
@@ -1969,7 +1969,7 @@ Used to create page width and custom width container classes.
 
 ```
 
-[ View source code for _width-container.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.1.0/packages/govuk-frontend/src/govuk/objects/_width-container.scss#L21-L70)
+[ View source code for _width-container.scss on GitHub ](https://github.com/alphagov/govuk-frontend/tree/v6.3.0/packages/govuk-frontend/src/govuk/objects/_width-container.scss#L21-L70)
   * [View source](https://github.com/alphagov/govuk-frontend-docs/blob/master/source/sass-api-reference/index.html.md.erb)
   * [Report problem](https://github.com/alphagov/govuk-frontend-docs/issues/new?body=Problem+with+%27Sass+API+reference%27+%28https%3A%2F%2Ffrontend.design-system.service.gov.uk%2Fsass-api-reference%2F%29&labels=bug&title=Re%3A+%27Sass+API+reference%27)
   * [GitHub Repo](https://github.com/alphagov/govuk-frontend-docs)
@@ -1979,4 +1979,5 @@ Used to create page width and custom width container classes.
   * [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/)
 
 All content is available under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), except where otherwise stated 
-[© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)
+[Â© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)
+

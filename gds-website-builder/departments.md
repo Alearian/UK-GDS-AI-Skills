@@ -1,23 +1,23 @@
-# UK Government Departments — GDS v6 Guidance
+﻿# UK Government Departments â€” GDS v6 Guidance
 
 Use this file **only when the user explicitly names a department** (MoJ, DfT, MoD, FCDO, HO, HMRC, DWP, HMPPS, etc.). Otherwise, stick to the standard GOV.UK markup in `SKILL.md`.
 
 ## Core rule
 
-**The header never changes.** The unified GOV.UK Tudor Crown logotype is mandatory for every central-government service on the GOV.UK platform. No departmental logos in the header — ever. The department name goes in the **Service Navigation** component.
+**The header never changes.** The unified GOV.UK Tudor Crown logotype is mandatory for every central-government service on the GOV.UK platform. No departmental logos in the header â€” ever. The department name goes in the **Service Navigation** component.
 
 The **footer** is the only place where departmental attribution is permitted, and even then GDS prescribes a **text link in the `meta` slot**, not a logo.
 
 ---
 
-## Footer pattern — departmental attribution
+## Footer pattern â€” departmental attribution
 
 Add a `govuk-footer__meta-custom` block inside the existing `govuk-footer__meta` container, or use the `meta.html` slot. The key is: text link only, styled with `govuk-footer__link`.
 
 ```html
 <div class="govuk-footer">
   <div class="govuk-width-container">
-    <!-- Tudor Crown SVG (unchanged — see components/footer.md) -->
+    <!-- Tudor Crown SVG (unchanged â€” see components/footer.md) -->
     <svg focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 64 60" height="30" width="32"
          fill="currentcolor" class="govuk-footer__crown">
@@ -40,7 +40,7 @@ Add a `govuk-footer__meta-custom` block inside the existing `govuk-footer__meta`
       <div class="govuk-footer__meta-item">
         <a class="govuk-footer__link govuk-footer__copyright-logo"
            href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
-          © Crown copyright
+          Â© Crown copyright
         </a>
       </div>
     </div>
@@ -74,9 +74,9 @@ Full URL format: `https://www.gov.uk/government/organisations{suffix}`.
 
 ---
 
-## MoJ Frontend — extension components
+## MoJ Frontend â€” extension components
 
-For MoJ/HMPPS/HMCTS services, **in addition to** GOV.UK Frontend v6.1.0:
+For MoJ/HMPPS/HMCTS services, **in addition to** GOV.UK Frontend v6.3.0:
 
 ```bash
 npm install @ministryofjustice/frontend
@@ -90,7 +90,7 @@ Sass entry:
 
 Adds (among others): `moj-filter`, `moj-banner`, `moj-sub-navigation`, `moj-identity-bar`, `moj-multi-file-upload`, `moj-date-picker`, `moj-sortable-table`, `moj-pagination`, `moj-search`, `moj-timeline`.
 
-These sit alongside `govuk-*` components — prefer a `govuk-*` component whenever one exists. Only reach for `moj-*` when GDS has no equivalent.
+These sit alongside `govuk-*` components â€” prefer a `govuk-*` component whenever one exists. Only reach for `moj-*` when GDS has no equivalent.
 
 ---
 
@@ -98,6 +98,7 @@ These sit alongside `govuk-*` components — prefer a `govuk-*` component whenev
 
 1. **Do not add a departmental logo SVG to the header.** Breaks v6 brand rules.
 2. **Do not add a departmental logo to the footer.** GDS doesn't distribute official logo SVGs; unofficial ones violate Crown copyright on crests and drift visually from the department's current brand.
-3. **Do not replace "© Crown copyright".** It stays verbatim.
-4. **Do not omit the OGL licence block** unless the service legitimately publishes under a different licence (rare — requires explicit confirmation).
+3. **Do not replace "Â© Crown copyright".** It stays verbatim.
+4. **Do not omit the OGL licence block** unless the service legitimately publishes under a different licence (rare â€” requires explicit confirmation).
 5. **Do not use a department's own design system** (e.g. an intranet brand) for a public GOV.UK service.
+

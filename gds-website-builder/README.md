@@ -1,6 +1,6 @@
-# GDS Website Builder — Claude Code Skill
+﻿# GDS Website Builder â€” Claude Code Skill
 
-A [Claude Code](https://claude.ai/claude-code) skill that gives Claude expert knowledge of the [GOV.UK Design System](https://design-system.service.gov.uk/) (GDS Frontend v6.1.0), enabling it to build fully compliant GOV.UK prototype websites using plain HTML and `govuk-*` CSS classes.
+A [Claude Code](https://claude.ai/claude-code) skill that gives Claude expert knowledge of the [GOV.UK Design System](https://design-system.service.gov.uk/) (GDS Frontend v6.3.0), enabling it to build fully compliant GOV.UK prototype websites using plain HTML and `govuk-*` CSS classes.
 
 The `gds-docs-update` companion skill keeps the bundled docs fresh by re-crawling the live GOV.UK Design System website whenever a new version is released.
 
@@ -10,10 +10,10 @@ The `gds-docs-update` companion skill keeps the bundled docs fresh by re-crawlin
 
 ### `gds-website-builder`
 - Generates correct, accessible HTML for every GDS component and page pattern
-- Knows all **v6.1.0 breaking changes** (Tudor Crown SVG, `<div>` header/footer, Service navigation component)
-- Reads the bundled `gds-docs/` folder for authoritative, up-to-date HTML examples — no hallucination from training data
+- Knows all **v6.3.0 breaking changes** (Tudor Crown SVG, `<div>` header/footer, Service navigation component)
+- Reads the bundled `gds-docs/` folder for authoritative, up-to-date HTML examples â€” no hallucination from training data
 - Enforces WCAG 2.1 AA accessibility rules throughout
-- Outputs TypeScript-compatible HTML — **no Nunjucks**
+- Outputs TypeScript-compatible HTML â€” **no Nunjucks**
 
 ### `gds-docs-update`
 - Crawls all 111 pages of `https://design-system.service.gov.uk/` using the [crawl4ai](https://github.com/unclecode/crawl4ai) Docker container
@@ -95,34 +95,34 @@ The skill will start the crawl4ai Docker container and re-crawl all 111 pages, w
 
 ```
 gds-website-builder/
-  SKILL.md                  — Main skill definition loaded by Claude Code
-  DOCS_INDEX.md             — Auto-generated index for selective doc loading (run build_index.py)
-  gds-docs/                 — Design System website docs (111 markdown files)
-    components/             — 34 component pages
-    patterns/               — 29 pattern pages
-    styles/                 — 13 style pages
-    get-started/            — 6 get-started pages
-    community/              — 15 community pages
-    accessibility/          — 1 accessibility page
-  gds-frontend-docs/        — Frontend how-to docs (auto-discovered, run crawl_frontend.py)
+  SKILL.md                  â€” Main skill definition loaded by Claude Code
+  DOCS_INDEX.md             â€” Auto-generated index for selective doc loading (run build_index.py)
+  gds-docs/                 â€” Design System website docs (111 markdown files)
+    components/             â€” 34 component pages
+    patterns/               â€” 29 pattern pages
+    styles/                 â€” 13 style pages
+    get-started/            â€” 6 get-started pages
+    community/              â€” 15 community pages
+    accessibility/          â€” 1 accessibility page
+  gds-frontend-docs/        â€” Frontend how-to docs (auto-discovered, run crawl_frontend.py)
     index.md
     installing-with-npm.md
     importing-css.md  importing-javascript.md  configure-components.md  ...
   gds_git/
-    govuk-design-system/    — GitHub source repo (run sync_git.py)
-      app/src/views/        — Nunjucks macros
-      src/                  — SASS source
+    govuk-design-system/    â€” GitHub source repo (run sync_git.py)
+      app/src/views/        â€” Nunjucks macros
+      src/                  â€” SASS source
 
 gds-docs-update/
-  SKILL.md                  — Docs-update skill definition
+  SKILL.md                  â€” Docs-update skill definition
   scripts/
-    crawl_site.py           — Crawls design-system.service.gov.uk (111 pages)
-    site_pages.py           — Master list of all 111 URLs
-    crawl_frontend.py       — Crawls frontend.design-system.service.gov.uk (auto-discovers pages)
-    sync_git.py             — Clones or pulls alphagov/govuk-design-system
-    build_index.py          — Generates DOCS_INDEX.md
-    process_md.py           — Standalone markdown cleaner (one-off use)
-    save_toplevel.py        — Legacy script (superseded by crawl_site.py)
+    crawl_site.py           â€” Crawls design-system.service.gov.uk (111 pages)
+    site_pages.py           â€” Master list of all 111 URLs
+    crawl_frontend.py       â€” Crawls frontend.design-system.service.gov.uk (auto-discovers pages)
+    sync_git.py             â€” Clones or pulls alphagov/govuk-design-system
+    build_index.py          â€” Generates DOCS_INDEX.md
+    process_md.py           â€” Standalone markdown cleaner (one-off use)
+    save_toplevel.py        â€” Legacy script (superseded by crawl_site.py)
 ```
 
 ---
@@ -149,5 +149,6 @@ When GOV.UK Frontend releases a new version, or periodically to stay current:
 ## Notes
 
 - The `gds-docs/` folder is intentionally committed to the repo so that `gds-website-builder` works immediately after install without needing to run a crawl
-- The docs were crawled from `https://design-system.service.gov.uk/` — all content belongs to the GOV.UK Design System team (Crown Copyright)
+- The docs were crawled from `https://design-system.service.gov.uk/` â€” all content belongs to the GOV.UK Design System team (Crown Copyright)
 - This repo is an unofficial community tool and is not affiliated with CDDO or the GOV.UK Design System team
+

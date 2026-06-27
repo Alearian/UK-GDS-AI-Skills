@@ -1,6 +1,6 @@
-# GOV.UK Design System — Nunjucks Macro Reference
+﻿# GOV.UK Design System â€” Nunjucks Macro Reference
 
-GOV.UK Frontend v6.1.0 ships Nunjucks macros for every component. Use these when building with
+GOV.UK Frontend v6.3.0 ships Nunjucks macros for every component. Use these when building with
 the GOV.UK Prototype Kit, Express/Nunjucks apps, or any server-side Node project where `.njk`
 templates are rendered server-side.
 
@@ -13,8 +13,8 @@ templates are rendered server-side.
 
 ### GOV.UK Prototype Kit (recommended for prototyping)
 
-Install **v7 or later** of the Prototype Kit — it includes govuk-frontend and configures Nunjucks
-automatically. Do **not** add the `{% from … %}` import line; the Kit resolves macros globally.
+Install **v7 or later** of the Prototype Kit â€” it includes govuk-frontend and configures Nunjucks
+automatically. Do **not** add the `{% from â€¦ %}` import line; the Kit resolves macros globally.
 
 ```bash
 npx govuk-prototype-kit create my-prototype
@@ -23,7 +23,7 @@ npx govuk-prototype-kit create my-prototype
 ### Express / custom Node app
 
 ```bash
-npm install govuk-frontend@6.1.0 nunjucks
+npm install govuk-frontend@6.3.0 nunjucks
 ```
 
 Configure Nunjucks to resolve macros from the package:
@@ -54,7 +54,7 @@ the named blocks:
 ```nunjucks
 {% extends "govuk/template.njk" %}
 
-{% set pageTitle = "My page – My Service – GOV.UK" %}
+{% set pageTitle = "My page â€“ My Service â€“ GOV.UK" %}
 
 {% block head %}
   <link rel="stylesheet" href="/assets/govuk-frontend.min.css">
@@ -155,7 +155,7 @@ The Nunjucks function name is always `govuk` + PascalCase component name:
 
 ---
 
-## Component macros — complete reference
+## Component macros â€” complete reference
 
 ### govukHeader
 
@@ -250,7 +250,7 @@ With error:
 | `errorMessage` | object | Error message config |
 | `classes` | string | Width/extra classes e.g. `govuk-input--width-10` |
 | `autocomplete` | string | Autocomplete attribute (WCAG 1.3.5) |
-| `prefix` | object | Prefix text/html (e.g. `£`) |
+| `prefix` | object | Prefix text/html (e.g. `Â£`) |
 | `suffix` | object | Suffix text/html (e.g. `kg`) |
 | `spellcheck` | boolean | Enable/disable spellcheck |
 | `disabled` | boolean | Disable the input |
@@ -480,7 +480,7 @@ Date of birth (with autocomplete):
 | Option | Type | Description |
 |---|---|---|
 | `id` | string | **Required.** Component ID; also prefixes each input |
-| `namePrefix` | string | Prefix for item `name` attributes (e.g. `dob` → `dob-day`) |
+| `namePrefix` | string | Prefix for item `name` attributes (e.g. `dob` â†’ `dob-day`) |
 | `items` | array | Day/month/year input configs (auto-generated if omitted) |
 | `fieldset` | object | Fieldset/legend wrapper |
 | `hint` | object | Hint config |
@@ -661,7 +661,7 @@ Or pass content directly:
 | `html` | string | Banner body HTML |
 | `titleText` | string | Title (default: "Important" or "Success") |
 | `titleHtml` | string | Title HTML |
-| `titleHeadingLevel` | string | Heading level 1–6 (default `2`) |
+| `titleHeadingLevel` | string | Heading level 1â€“6 (default `2`) |
 | `type` | string | `"success"` for green success banner |
 | `role` | string | ARIA role (default `region`; `alert` for success) |
 | `disableAutoFocus` | boolean | Prevent auto-focus on load |
@@ -726,7 +726,7 @@ Or pass content directly:
 | `titleHtml` | string | Panel heading HTML |
 | `text` | string | Panel body text |
 | `html` | string | Panel body HTML |
-| `headingLevel` | integer | Heading level 1–6 (default `1`) |
+| `headingLevel` | integer | Heading level 1â€“6 (default `1`) |
 | `classes` | string | Extra classes |
 | `attributes` | object | HTML attributes |
 
@@ -761,6 +761,7 @@ Or pass content directly:
 
 Macros raise unhelpful errors when required options are missing or types are wrong. Always preview
 after changes. Common mistakes:
-- Passing a string where an object is expected (`label: "Name"` → should be `label: { text: "Name" }`)
+- Passing a string where an object is expected (`label: "Name"` â†’ should be `label: { text: "Name" }`)
 - Missing `name` on inputs
 - Using `title:` instead of `titleText:` on error summary
+

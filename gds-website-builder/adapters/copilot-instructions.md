@@ -1,19 +1,19 @@
-# GOV.UK Design System — GDS Frontend v6.1.0
+﻿# GOV.UK Design System â€” GDS Frontend v6.3.0
 
-You are an expert in the GOV.UK Design System. All HTML output uses plain `govuk-*` CSS classes. No Nunjucks — generate clean HTML only.
+You are an expert in the GOV.UK Design System. All HTML output uses plain `govuk-*` CSS classes. No Nunjucks â€” generate clean HTML only.
 
-Install: `npm install govuk-frontend@6.1.0`
+Install: `npm install govuk-frontend@6.3.0`
 
 ---
 
-## CRITICAL: v6.1.0 Breaking Changes
+## CRITICAL: v6.3.0 Breaking Changes
 
 1. **Header is `<div class="govuk-header">`, NOT `<header>`**
-2. **Header uses the new Tudor Crown SVG** (viewBox `0 0 324 60`, width 162, height 30) — single SVG combining crown + "GOV.UK" wordmark. Do NOT use the old separate crown + `<span class="govuk-header__logotype-text">` approach.
-3. **Service name is NOT in the header** — use `govuk-service-navigation` component below the header
+2. **Header uses the new Tudor Crown SVG** (viewBox `0 0 324 60`, width 162, height 30) â€” single SVG combining crown + "GOV.UK" wordmark. Do NOT use the old separate crown + `<span class="govuk-header__logotype-text">` approach.
+3. **Service name is NOT in the header** â€” use `govuk-service-navigation` component below the header
 4. **Footer is `<div class="govuk-footer">`, NOT `<footer>`**
 5. **Footer has a standalone Tudor Crown SVG** (viewBox `0 0 64 60`) with `role="presentation"`
-6. **Footer has an inline OGL licence SVG** — not an `<img>`
+6. **Footer has an inline OGL licence SVG** â€” not an `<img>`
 7. **Phase banner wording**: "This is a new service. Help us improve it and give your feedback by email."
 
 For the full Tudor Crown SVG path data, refer to `gds-docs/components/header.md` and `gds-docs/components/footer.md` in this repository.
@@ -28,7 +28,7 @@ For the full Tudor Crown SVG path data, refer to `gds-docs/components/header.md`
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[Page title] – [Service name] – GOV.UK</title>
+  <title>[Page title] â€“ [Service name] â€“ GOV.UK</title>
   <link rel="stylesheet" href="/assets/govuk-frontend.min.css">
 </head>
 <body class="govuk-template__body">
@@ -38,7 +38,7 @@ For the full Tudor Crown SVG path data, refer to `gds-docs/components/header.md`
     <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
         <a href="https://www.gov.uk/" class="govuk-header__homepage-link">
-          <!-- Tudor Crown SVG — see gds-docs/components/header.md -->
+          <!-- Tudor Crown SVG â€” see gds-docs/components/header.md -->
         </a>
       </div>
     </div>
@@ -76,7 +76,7 @@ For the full Tudor Crown SVG path data, refer to `gds-docs/components/header.md`
     </main>
   </div>
 
-  <!-- Footer — see gds-docs/components/footer.md for full markup with SVGs -->
+  <!-- Footer â€” see gds-docs/components/footer.md for full markup with SVGs -->
 
   <script type="module">
     import { initAll } from '/assets/govuk-frontend.min.js'
@@ -186,7 +186,7 @@ Width classes: `govuk-input--width-30/20/10/5/4/3/2`
 - **Check your answers**: `govuk-summary-list` with Change links; submit = "Confirm and send"
 - **Confirmation page**: `govuk-panel govuk-panel--confirmation` with reference number; no back link
 - **Task list**: `govuk-task-list` with status tags (Completed / In progress / Not yet started / Cannot start yet)
-- **Back link**: `<a href="javascript:history.back()" class="govuk-back-link">Back</a>` — never on confirmation pages
+- **Back link**: `<a href="javascript:history.back()" class="govuk-back-link">Back</a>` â€” never on confirmation pages
 
 For full HTML of all patterns, see `gds-docs/patterns/` in this repository.
 
@@ -206,14 +206,14 @@ govuk-width-container     govuk-main-wrapper
 
 ## Accessibility Rules (WCAG 2.1 AA)
 
-1. Every `<input>`/`<textarea>`/`<select>` must have a `<label>` with matching `for`/`id` — never use `placeholder` as a label
+1. Every `<input>`/`<textarea>`/`<select>` must have a `<label>` with matching `for`/`id` â€” never use `placeholder` as a label
 2. Group radios/checkboxes/date in `<fieldset>` + `<legend>`
 3. All hint and error IDs must be in `aria-describedby` on the input
 4. Error messages must start with `<span class="govuk-visually-hidden">Error:</span>`
 5. Use `autocomplete` attributes on personal data fields
 6. Skip link must be the first focusable element
 7. `<main id="main-content">` is required
-8. Page title: `[Page title] – [Service name] – GOV.UK`; prefix with `Error: ` on error pages
+8. Page title: `[Page title] â€“ [Service name] â€“ GOV.UK`; prefix with `Error: ` on error pages
 9. Never remove focus styles
 
 ---
@@ -222,7 +222,8 @@ govuk-width-container     govuk-main-wrapper
 
 All 111 pages of the GOV.UK Design System are in `gds-docs/` in this repository:
 
-- `gds-docs/components/` — 34 components (accordion, button, checkboxes, date-input, footer, header, radios, summary-list, task-list, etc.)
-- `gds-docs/patterns/` — 29 patterns (check-answers, confirmation-pages, question-pages, task-list, validation, etc.)
-- `gds-docs/styles/` — 13 style guides (colour, layout, spacing, typography, etc.)
-- `gds-docs/get-started/` — setup and configuration guides
+- `gds-docs/components/` â€” 34 components (accordion, button, checkboxes, date-input, footer, header, radios, summary-list, task-list, etc.)
+- `gds-docs/patterns/` â€” 29 patterns (check-answers, confirmation-pages, question-pages, task-list, validation, etc.)
+- `gds-docs/styles/` â€” 13 style guides (colour, layout, spacing, typography, etc.)
+- `gds-docs/get-started/` â€” setup and configuration guides
+
