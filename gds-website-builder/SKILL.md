@@ -28,24 +28,68 @@ GOV.UK Frontend v6.3.0 provides the CSS, JS, and component patterns for UK gover
 Output can use either **plain HTML** with `govuk-*` CSS classes, or **Nunjucks macros** (the
 GOV.UK-approved server-side templating approach used by the Prototype Kit and production Node apps).
 
-## Output format â€” ask the user first
+## Step 1 — Check govuk-frontend is installed
 
-**Before generating any component or page code**, if the user has not already indicated their stack,
-ask:
+**Before generating any code**, check whether the user has `govuk-frontend` installed in their
+project. If it is not clear from context, ask:
+
+> "Do you have `govuk-frontend` installed in your project? If not, I can walk you through setup."
+
+**If they do not have it installed**, help them set it up based on their stack:
+
+- **GOV.UK Prototype Kit** (easiest — includes everything automatically):
+  ```bash
+  npx govuk-prototype-kit create my-prototype
+  cd my-prototype
+  npm start
+  ```
+
+- **Express / Node app**:
+  ```bash
+  npm install govuk-frontend@6.3.0
+  ```
+  Then serve `/node_modules/govuk-frontend/dist/` as static assets, or copy the compiled files
+  to your public directory.
+
+- **React / static site (Vite, Next.js, etc.)**:
+  ```bash
+  npm install govuk-frontend@6.3.0
+  ```
+  Import the CSS in your entry point:
+  ```js
+  import 'govuk-frontend/dist/govuk/govuk-frontend.min.css'
+  ```
+  Import and init the JS:
+  ```js
+  import { initAll } from 'govuk-frontend'
+  initAll()
+  ```
+
+Only proceed to generate component code once the user confirms (or it is clear from context) that
+`govuk-frontend` is available in their project.
+
+**Skip this check when:** the user is clearly just asking a question, reviewing existing code, or
+working in the Prototype Kit (which bundles govuk-frontend automatically).
+
+---
+
+## Step 2 — Choose output format
+
+**Once setup is confirmed**, if the user has not already indicated their stack, ask:
 
 > "Would you like the output as **plain HTML** (for React, TypeScript, or static sites) or as
 > **Nunjucks macros** (for the GOV.UK Prototype Kit or an Express/Node app)?"
 
 Only skip the question when the context makes it obvious:
-- User mentions React, Next.js, TypeScript, or a static site â†’ plain HTML, no question needed
-- User mentions Prototype Kit, `.njk`, Express, or Nunjucks â†’ Nunjucks macros, no question needed
-- User explicitly says "HTML" or "Nunjucks" â†’ honour that, no question needed
+- User mentions React, Next.js, TypeScript, or a static site → plain HTML, no question needed
+- User mentions Prototype Kit, `.njk`, Express, or Nunjucks → Nunjucks macros, no question needed
+- User explicitly says "HTML" or "Nunjucks" → honour that, no question needed
 
 If the user chooses Nunjucks, read `gds-docs/nunjucks-macros.md` before generating output.
 
 **Choose based on context:**
-- **Plain HTML** â†’ React, TypeScript, static sites, any non-Node stack
-- **Nunjucks macros** â†’ GOV.UK Prototype Kit, Express/Node apps, server-rendered `.njk` templates
+- **Plain HTML** → React, TypeScript, static sites, any non-Node stack
+- **Nunjucks macros** → GOV.UK Prototype Kit, Express/Node apps, server-rendered `.njk` templates
 
 Install: `npm install govuk-frontend@6.3.0`
 
@@ -65,32 +109,32 @@ Before `</body>`:
 
 ---
 
-## Reference docs â€” selective loading
+## Reference docs — selective loading
 
 Three local reference sources are available. **Always read `DOCS_INDEX.md` first**, then
 load only the specific file(s) needed. Never load all docs at once.
 
 | Source | Location | What it contains |
 |---|---|---|
-| `DOCS_INDEX.md` | `~/.claude/skills/gds-website-builder/DOCS_INDEX.md` | Full index â€” read this first to find the right file |
+| `DOCS_INDEX.md` | `~/.claude/skills/gds-website-builder/DOCS_INDEX.md` | Full index — read this first to find the right file |
 | Design System docs | `~/.claude/skills/gds-website-builder/gds-docs/` | Components, patterns, styles, accessibility |
 | Frontend how-to docs | `~/.claude/skills/gds-website-builder/gds-frontend-docs/` | NPM setup, CSS/JS importing, configuration |
 | Source repo | `~/.claude/skills/gds-website-builder/gds_git/govuk-design-system/` | Nunjucks macros, SASS source |
 
 ### Quick lookup rules
 
-- **Building a specific component** â†’ read `gds-docs/components/{component-name}.md`
-- **Implementing a pattern** â†’ read `gds-docs/patterns/{pattern-name}.md`
-- **CSS/JS setup, NPM install, or configuration** â†’ read from `gds-frontend-docs/`
-- **Need Nunjucks macro or SASS variable** â†’ Grep `gds_git/govuk-design-system/`
-- **Unsure what file to read** â†’ read `DOCS_INDEX.md` first, then the specific file
+- **Building a specific component** → read `gds-docs/components/{component-name}.md`
+- **Implementing a pattern** → read `gds-docs/patterns/{pattern-name}.md`
+- **CSS/JS setup, NPM install, or configuration** → read from `gds-frontend-docs/`
+- **Need Nunjucks macro or SASS variable** → Grep `gds_git/govuk-design-system/`
+- **Unsure what file to read** → read `DOCS_INDEX.md` first, then the specific file
 
 ### Example: building a button component
 
 ```
-1. Read DOCS_INDEX.md  â†’  confirms gds-docs/components/button.md exists
-2. Read gds-docs/components/button.md  â†’  get the correct HTML
-3. Done â€” no other files needed
+1. Read DOCS_INDEX.md  →  confirms gds-docs/components/button.md exists
+2. Read gds-docs/components/button.md  →  get the correct HTML
+3. Done — no other files needed
 ```
 
 Run the `gds-docs-update` skill to populate or refresh any of these sources.
@@ -101,13 +145,13 @@ Run the `gds-docs-update` skill to populate or refresh any of these sources.
 
 The June 2025 GOV.UK brand refresh introduced several **breaking changes**. Always follow these rules:
 
-1. **Header is a `<div>`, NOT a `<header>`** â€” use `<div class="govuk-header">`
-2. **Header uses the new Tudor Crown SVG logotype** â€” a single combined SVG (viewBox `0 0 324 60`, width 162, height 30) containing both the crown graphic and "GOV.UK" wordmark. Uses `role="img"`, `aria-label="GOV.UK"`, and a `<title>` element. Do NOT use the old separate crown SVG + `<span class="govuk-header__logotype-text">` approach.
-3. **Service name is NO LONGER in the header** â€” use the separate **Service navigation** component (`govuk-service-navigation`) below the header instead. The header `<div>` should contain ONLY the logo.
-4. **Footer is a `<div>`, NOT a `<footer>`** â€” use `<div class="govuk-footer">`
-5. **Footer has a standalone Tudor Crown SVG** â€” a crown-only SVG (viewBox `0 0 64 60`, width 32, height 30) with `role="presentation"` appears inside the footer container before the meta section.
-6. **Footer has an inline OGL licence logo SVG** â€” replaces old image reference.
-7. **Phase banner wording changed** â€” now uses "This is a new service. Help us improve it and give your feedback by email."
+1. **Header is a `<div>`, NOT a `<header>`** — use `<div class="govuk-header">`
+2. **Header uses the new Tudor Crown SVG logotype** — a single combined SVG (viewBox `0 0 324 60`, width 162, height 30) containing both the crown graphic and "GOV.UK" wordmark. Uses `role="img"`, `aria-label="GOV.UK"`, and a `<title>` element. Do NOT use the old separate crown SVG + `<span class="govuk-header__logotype-text">` approach.
+3. **Service name is NO LONGER in the header** — use the separate **Service navigation** component (`govuk-service-navigation`) below the header instead. The header `<div>` should contain ONLY the logo.
+4. **Footer is a `<div>`, NOT a `<footer>`** — use `<div class="govuk-footer">`
+5. **Footer has a standalone Tudor Crown SVG** — a crown-only SVG (viewBox `0 0 64 60`, width 32, height 30) with `role="presentation"` appears inside the footer container before the meta section.
+6. **Footer has an inline OGL licence logo SVG** — replaces old image reference.
+7. **Phase banner wording changed** — now uses "This is a new service. Help us improve it and give your feedback by email."
 
 ---
 
@@ -121,7 +165,7 @@ Every GDS page follows this structure:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[Page title] â€“ [Service name] â€“ GOV.UK</title>
+  <title>[Page title] ”“ [Service name] ”“ GOV.UK</title>
   <link rel="stylesheet" href="/assets/govuk-frontend.min.css">
 </head>
 <body class="govuk-template__body">
@@ -129,12 +173,12 @@ Every GDS page follows this structure:
   <!-- Skip link: MUST be first interactive element -->
   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
 
-  <!-- GOV.UK header (v6.3.0 â€” <div>, Tudor Crown logotype, NO service name) -->
+  <!-- GOV.UK header (v6.3.0 — <div>, Tudor Crown logotype, NO service name) -->
   <div class="govuk-header">
     <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
         <a href="https://www.gov.uk/" class="govuk-header__homepage-link">
-          <!-- Full Tudor Crown logotype SVG â€” see gds-docs/components/header.md -->
+          <!-- Full Tudor Crown logotype SVG — see gds-docs/components/header.md -->
         </a>
       </div>
     </div>
@@ -176,8 +220,8 @@ Every GDS page follows this structure:
     </main>
   </div>
 
-  <!-- Footer (v6.3.0 â€” <div>, Tudor Crown SVG, OGL licence logo SVG) -->
-  <!-- Full footer markup â€” see gds-docs/components/footer.md -->
+  <!-- Footer (v6.3.0 — <div>, Tudor Crown SVG, OGL licence logo SVG) -->
+  <!-- Full footer markup — see gds-docs/components/footer.md -->
 
   <script type="module">
     import { initAll } from '/assets/govuk-frontend.min.js'
@@ -378,7 +422,7 @@ Place inside `govuk-width-container`, before `govuk-main-wrapper`. Never show on
   </div>
 </div>
 
-<!-- Success (green) â€” add role="alert" and type="success" -->
+<!-- Success (green) — add role="alert" and type="success" -->
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -395,17 +439,17 @@ Place inside `govuk-width-container`, before `govuk-main-wrapper`. Never show on
 ## Typography Classes
 
 ```
-govuk-heading-xl    h1 equivalent â€” 48px bold
-govuk-heading-l     h2 equivalent â€” 36px bold
-govuk-heading-m     h3 equivalent â€” 24px bold
-govuk-heading-s     h4 equivalent â€” 19px bold
-govuk-body          Standard body text â€” 19px
-govuk-body-l        Large body â€” 24px
-govuk-body-s        Small body â€” 16px
+govuk-heading-xl    h1 equivalent — 48px bold
+govuk-heading-l     h2 equivalent — 36px bold
+govuk-heading-m     h3 equivalent — 24px bold
+govuk-heading-s     h4 equivalent — 19px bold
+govuk-body          Standard body text — 19px
+govuk-body-l        Large body — 24px
+govuk-body-s        Small body — 16px
 govuk-caption-xl/l/m  Caption above heading (e.g. section name)
 govuk-label         Form label
 govuk-label--l/m/s  Label sizing
-govuk-hint          Hint text â€” grey
+govuk-hint          Hint text — grey
 govuk-link          Hyperlink style
 govuk-link--no-visited-state  Link that doesn't change colour when visited
 ```
@@ -414,18 +458,18 @@ govuk-link--no-visited-state  Link that doesn't change colour when visited
 
 ## Accessibility Rules (WCAG 2.1 AA)
 
-1. Every `<input>`, `<textarea>`, `<select>` must have a `<label>` with a matching `for`/`id` pair â€” never use `placeholder` as a label substitute
+1. Every `<input>`, `<textarea>`, `<select>` must have a `<label>` with a matching `for`/`id` pair — never use `placeholder` as a label substitute
 2. Group related inputs (radios, checkboxes, date) in a `<fieldset>` with `<legend>`
 3. All hint and error IDs must be in `aria-describedby` on the input
 4. Error messages must include `<span class="govuk-visually-hidden">Error:</span>` prefix
 5. Use `autocomplete` attributes on personal data fields
 6. The skip link `<a href="#main-content">` must be the first focusable element
-7. `<main id="main-content">` is required â€” the skip link target
+7. `<main id="main-content">` is required — the skip link target
 8. Colour must never be the only means of conveying information
-9. Focus styles must not be removed â€” never `outline: none` without a replacement
+9. Focus styles must not be removed — never `outline: none` without a replacement
 10. `aria-label` / `aria-describedby` on any icon-only buttons
 11. Images must have descriptive `alt` text; decorative images use `alt=""`
-12. Page `<title>` format: `[Page title] â€“ [Service name] â€“ GOV.UK`
+12. Page `<title>` format: `[Page title] ”“ [Service name] ”“ GOV.UK`
 13. On error pages: `<title>` must be prefixed with `Error: `
 
 ---
@@ -442,12 +486,12 @@ templates, use Nunjucks macros instead of plain HTML. Read the macro reference f
 It covers: Prototype Kit setup, Express/Node setup, the `govuk/template.njk` base template, import
 paths for all 34 components, and full options tables for every major component.
 
-**Key rule:** In the Prototype Kit, omit the `{% from â€¦ %}` import line â€” macros are auto-available.
+**Key rule:** In the Prototype Kit, omit the `{% from ”¦ %}` import line — macros are auto-available.
 In a custom Express app, add the import at the top of each template.
 
 ---
 
-## GDS Docs â€” Authoritative Reference
+## GDS Docs — Authoritative Reference
 
 All GDS documentation is collated from the live GOV.UK Design System website and stored in the `gds-docs/` folder alongside this skill. **When you need full HTML markup, Nunjucks macros, options, or guidance for any component or pattern, read the relevant file below.**
 
@@ -455,7 +499,7 @@ Base path: `~/.claude/skills/gds-website-builder/gds-docs/`
 > **Windows:** `%USERPROFILE%\.claude\skills\gds-website-builder\gds-docs\`
 
 ### Components (34 files)
-Read `components/<name>.md` for any component â€” full HTML examples, options table, accessibility notes:
+Read `components/<name>.md` for any component — full HTML examples, options table, accessibility notes:
 
 | Component | File |
 |-----------|------|
@@ -514,12 +558,13 @@ Read `accessibility/accessibility-strategy.md` for the GOV.UK accessibility stra
 
 ### Department-specific guidance
 When the user explicitly names a UK government department (MoJ, DfT, MoD, FCDO, HO, HMRC, DWP, HMPPS, etc.), read `departments.md`. It covers:
-- The correct footer `meta` text-link pattern for departmental attribution (no logos â€” the header never changes)
+- The correct footer `meta` text-link pattern for departmental attribution (no logos — the header never changes)
 - Department reference table (gov.uk URLs, frontend library)
 - MoJ Frontend extension setup for MoJ/HMPPS/HMCTS services
 - What not to do (no departmental logos, no replacing Crown copyright)
 
 ---
 
-**Usage:** When a user asks about a specific component, pattern, or style â€” read the relevant file from the base path above before generating HTML. The collated docs contain the canonical HTML, all variant examples, and up-to-date guidance from the live design system.
-
+**Usage:** When a user asks about a specific component, pattern, or style — read the relevant file from the base path above before generating HTML. The collated docs contain the canonical HTML, all variant examples, and up-to-date guidance from the live design system.
+
+
