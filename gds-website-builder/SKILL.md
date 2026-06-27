@@ -12,16 +12,40 @@ description: >
   - Structuring a GOV.UK page layout (skip-link, header, service-navigation, phase-banner, main content, footer)
   - Making pages WCAG 2.1 AA accessible using GDS conventions
   - Handling form validation and error display the GDS way
-  - Building GDS prototype apps using TypeScript + HTML (not Nunjucks)
+  - Building GDS prototype apps using TypeScript + HTML or Nunjucks macros
+  - Writing Nunjucks templates using govukButton, govukInput, govukRadios etc. macros
+  - Setting up the GOV.UK Prototype Kit or an Express/Nunjucks app with govuk-frontend
   - Reviewing or fixing pages for GDS compliance
 
   Also trigger for: govuk, gov.uk design system, GDS component, govuk-frontend, government service,
-  prototype kit pattern, one-thing-per-page, check your answers, confirmation page, phase banner
+  prototype kit pattern, one-thing-per-page, check your answers, confirmation page, phase banner,
+  nunjucks macro, prototype kit, govukButton, govukInput, njk template
 ---
 
 # GDS Website Builder Skill
 
-GOV.UK Frontend v6.1.0 provides the CSS, JS, and component patterns for UK government services. All output uses plain HTML with `govuk-*` CSS classes. **No Nunjucks** — this skill generates clean TypeScript-compatible HTML.
+GOV.UK Frontend v6.1.0 provides the CSS, JS, and component patterns for UK government services.
+Output can use either **plain HTML** with `govuk-*` CSS classes, or **Nunjucks macros** (the
+GOV.UK-approved server-side templating approach used by the Prototype Kit and production Node apps).
+
+## Output format — ask the user first
+
+**Before generating any component or page code**, if the user has not already indicated their stack,
+ask:
+
+> "Would you like the output as **plain HTML** (for React, TypeScript, or static sites) or as
+> **Nunjucks macros** (for the GOV.UK Prototype Kit or an Express/Node app)?"
+
+Only skip the question when the context makes it obvious:
+- User mentions React, Next.js, TypeScript, or a static site → plain HTML, no question needed
+- User mentions Prototype Kit, `.njk`, Express, or Nunjucks → Nunjucks macros, no question needed
+- User explicitly says "HTML" or "Nunjucks" → honour that, no question needed
+
+If the user chooses Nunjucks, read `gds-docs/nunjucks-macros.md` before generating output.
+
+**Choose based on context:**
+- **Plain HTML** → React, TypeScript, static sites, any non-Node stack
+- **Nunjucks macros** → GOV.UK Prototype Kit, Express/Node apps, server-rendered `.njk` templates
 
 Install: `npm install govuk-frontend@6.1.0`
 
@@ -406,9 +430,26 @@ govuk-link--no-visited-state  Link that doesn't change colour when visited
 
 ---
 
+## Nunjucks Macros
+
+When the user's project uses the **GOV.UK Prototype Kit**, **Express/Nunjucks**, or requests `.njk`
+templates, use Nunjucks macros instead of plain HTML. Read the macro reference first:
+
+```
+~/.claude/skills/gds-website-builder/gds-docs/nunjucks-macros.md
+```
+
+It covers: Prototype Kit setup, Express/Node setup, the `govuk/template.njk` base template, import
+paths for all 34 components, and full options tables for every major component.
+
+**Key rule:** In the Prototype Kit, omit the `{% from … %}` import line — macros are auto-available.
+In a custom Express app, add the import at the top of each template.
+
+---
+
 ## GDS Docs — Authoritative Reference
 
-All GDS documentation is collated from the live GOV.UK Design System website and stored in the `gds-docs/` folder alongside this skill. **When you need full HTML markup, options, or guidance for any component or pattern, read the relevant file below.**
+All GDS documentation is collated from the live GOV.UK Design System website and stored in the `gds-docs/` folder alongside this skill. **When you need full HTML markup, Nunjucks macros, options, or guidance for any component or pattern, read the relevant file below.**
 
 Base path: `~/.claude/skills/gds-website-builder/gds-docs/`
 > **Windows:** `%USERPROFILE%\.claude\skills\gds-website-builder\gds-docs\`

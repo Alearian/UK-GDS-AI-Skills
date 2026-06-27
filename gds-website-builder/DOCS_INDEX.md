@@ -5,6 +5,17 @@ Auto-generated index of all locally-available GDS reference documentation.
 
 ---
 
+## 0. Nunjucks macro reference (`gds-docs/nunjucks-macros.md`)
+
+**Read this when the user wants Nunjucks templates, GOV.UK Prototype Kit, or an Express/Node app.**
+
+- `gds-docs/nunjucks-macros.md` — Complete Nunjucks macro reference: setup (Prototype Kit + Express),
+  page template, import paths for all 34 components, and full options tables for Button, Input,
+  Textarea, Select, Radios, Checkboxes, Date Input, Error Summary, Summary List, Task List,
+  Notification Banner, Phase Banner, Back Link, Panel, Header.
+
+---
+
 ## 1. Design System docs (`gds-docs/`)
 
 Source: `https://design-system.service.gov.uk/`
@@ -12,6 +23,7 @@ Components, patterns, styles, accessibility rules, and community pages.
 
 **Quick lookup rule:** to build a specific component, read `gds-docs/components/{name}.md`.
 To implement a pattern, read `gds-docs/patterns/{name}.md`.
+For Nunjucks macro syntax, read `gds-docs/nunjucks-macros.md`.
 
 ### Root / standalone pages
 
